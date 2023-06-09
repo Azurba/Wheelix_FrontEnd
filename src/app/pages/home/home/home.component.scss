@@ -1,0 +1,60 @@
+.reserve {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 500px;
+    background-image: url("https://images.pexels.com/photos/346286/panorama-miami-florida-water-346286.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    background-size: 100% 500px;
+}
+
+h1, h2{
+    color: white;
+    font-weight: bolder;
+}
+  
+  
+.side-by-side {
+    display: flex;
+    margin-bottom: 30px;
+}
+  
+  .side-btn {
+    padding: 0.8em 1.8em;
+    border: 2px solid #ff9d00;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #ff9d00;
+    margin-right: 50px;
+   }
+   
+   .side-btn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(25deg);
+    background: #ff9d00;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   .side-btn:hover::before {
+    width: 105%;
+   }
+   
+   .side-btn:hover {
+    color: #ffffff;
+   }
+  
