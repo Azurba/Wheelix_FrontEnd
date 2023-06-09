@@ -5,10 +5,10 @@
 img{
     height: 80px;
     width: 240px;
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
-button {
+.side-btn {
     padding: 0.8em 1.8em;
     border: 2px solid #ff9d00;
     position: relative;
@@ -21,9 +21,10 @@ button {
     z-index: 1;
     font-family: inherit;
     color: #ffffff;
+    margin-right: 50px;
    }
    
-   button::before {
+   .side-btn::before {
     content: '';
     width: 0;
     height: 300%;
@@ -37,11 +38,18 @@ button {
     z-index: -1;
    }
    
-   button:hover::before {
+   .side-btn:hover::before {
     width: 105%;
    }
    
-   button:hover {
+   .side-btn:hover {
     color: #ffffff;
    }
    
+   .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 157, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+  .navbar-toggler {
+    border-color: rgb(255, 157, 0)
+  }
