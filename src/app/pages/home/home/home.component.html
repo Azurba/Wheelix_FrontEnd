@@ -1,5 +1,8 @@
+
+<!-- RESERVE -->
+
 <div class="reserve">
-    <h1>Reserve a Vehicle</h1>
+    <h1 style="font-size: 40px; color: #ff9d00;">Reserve a Vehicle</h1>
     <h2>Pick-up and Return Date</h2>
     <mat-form-field color="primary">
         <mat-label>Pick-up and Return Date</mat-label>
@@ -29,6 +32,9 @@
     </div>
     <button type="button" class="side-btn">Browse Vehicles</button>  
 </div>
+
+<!-- FEATURES -->
+
 <div class="row features">
     <div class="feature-box col-lg-3">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
@@ -59,5 +65,19 @@
       </div>
 </div>
 
+<!-- FLEET -->
+<div class="row">
+    <div class="d-flex justify-content-center">
+        <h1 style="color: black; margin-top: 40px; font-size: 40px;">Meet the Fleet</h1>
+    </div>
+    <div class="row justify-content-center" style="padding-bottom: 40px;">
+        <div class="col-auto" *ngFor="let item of fleetArray; let i = index" style="margin-bottom: 20px;">
+          <img src="{{ item.img }}" alt="" style="height: 200px; width: 350px;">
+          <div class="d-flex justify-content-center" style="margin-top: 15px;">
+              <h1 style="color: black;">{{item.type}}</h1>
+          </div>
+        </div>
+    </div>
+</div>
   
   
