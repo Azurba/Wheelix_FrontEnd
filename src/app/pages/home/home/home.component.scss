@@ -70,7 +70,6 @@ h1, h2{
     align-items: center;
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: #ff9d00
 }
 
 .feature-box {
@@ -81,3 +80,17 @@ h1, h2{
     margin-top: 15px;
     color: black;
 }
+
+#clients{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.vl {
+    border-left: 6px solid green;
+    height: 100px;
+  }
+
