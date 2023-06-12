@@ -58,3 +58,26 @@ h1, h2{
     color: #ffffff;
    }
   
+   svg{
+        height: 35px;
+        width: 35px;
+        color: black;
+   }
+
+   .features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #ff9d00
+}
+
+.feature-box {
+    text-align: center;
+}
+
+.feature-box h1{
+    margin-top: 15px;
+    color: black;
+}
