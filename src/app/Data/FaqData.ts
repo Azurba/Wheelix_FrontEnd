@@ -19,8 +19,8 @@ export class FaqData{
             answer: 'No problem! Reservations are valid for 24 hours from the scheduled time of pick-up for delayed flights and charges will not begin until the time of pick-up.'
         },
         {
-            question: 'Can I return my rental vehicle if the Enterprise location is closed?',
-            answer: 'Some of our locations Will allow returns after hours and will have procedures in place for your early or late return. Please check with the rental location when picking up your rental vehicle for exact procedure'
+            question: 'Can I return my rental vehicle if the Wheelix location is closed?',
+            answer: 'Some of our locations will allow returns after hours and will have procedures in place for your early or late return. Please check with the rental location when picking up your rental vehicle for exact procedure'
         },
         {
             question: 'What should I do if I get in an accident in a rental car?',
