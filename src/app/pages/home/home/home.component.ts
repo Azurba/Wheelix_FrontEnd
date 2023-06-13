@@ -8,6 +8,8 @@ import { IPStackAPI } from 'src/app/Model/IPStackAPI';
 import { HomeService } from 'src/app/services/home.service';
 import { FleetData } from 'src/app/Data/FleetData';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { OrderBuilderService } from 'src/app/services/order-builder.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +32,7 @@ export class HomeComponent {
   apiKey = '';
   city = '';
 
-  constructor(private _faq : FaqData, private homeService : HomeService, private _fleet : FleetData, private formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
+  constructor(private _faq : FaqData, private homeService : HomeService, private _fleet : FleetData, private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private ob : OrderBuilderService) {
     this.faqArray = _faq.faqArray;
     this.fleetArray = _fleet.fleetArray;
     this.getApiKey();
@@ -65,9 +67,10 @@ export class HomeComponent {
 
   browseVehicles(){
     if(this.driverForm.value.location != null && this.driverForm.value.age != null && this.range.value.start != null && this.range.value.end != null){
-      console.log(this.range.value);
-      console.log('Location:', this.driverForm.value.location);
-      console.log('Driver\'s Age:', this.driverForm.value.age);
+      this.ob.allow();
+      // console.log(this.range.value);
+      // console.log('Location:', this.driverForm.value.location);
+      // console.log('Driver\'s Age:', this.driverForm.value.age);
     }else{
       if(this.range.value.start === null || this.range.value.end === null){
         this._snackBar.open('Missing Information: Pick-up and Return Date', 'Close', { duration: 30000, horizontalPosition: 'center', verticalPosition: 'bottom' });

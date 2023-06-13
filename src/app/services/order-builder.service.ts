@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,11 @@ export class OrderBuilderService {
   //correctly in the home component
   private isAllowed = false;
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   allow(){
     this.isAllowed = true;
+    this.router.navigateByUrl('/orderBuilder');
   }
 
   isUserAllowed(){

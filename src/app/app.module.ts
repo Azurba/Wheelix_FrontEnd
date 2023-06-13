@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatStepperModule} from '@angular/material/stepper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +40,8 @@ import { OrderBuilderComponent } from './pages/orderBuilder/order-builder/order-
     ReactiveFormsModule,
     MatExpansionModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatStepperModule
   ],
   providers: [FaqData, HomeService, FleetData],
   bootstrap: [AppComponent]
