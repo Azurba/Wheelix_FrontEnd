@@ -6,11 +6,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/nav/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home/home.component';
+import { FaqData } from './Data/FaqData';
 
 
 
@@ -28,9 +30,10 @@ import { HomeComponent } from './pages/home/home/home.component';
     MatDatepickerModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule
   ],
-  providers: [],
+  providers: [FaqData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

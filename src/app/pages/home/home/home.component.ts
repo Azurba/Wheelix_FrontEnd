@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { FaqData } from 'src/app/Data/FaqData';
+import { Faq } from 'src/app/Model/Faq';
 import { FleetModel } from 'src/app/Model/FleetModel';
 
 @Component({
@@ -48,4 +50,11 @@ export class HomeComponent {
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
   });
+  panelOpenState = false;
+
+  faqArray : Array<Faq> = [];
+
+  constructor(_faq : FaqData) {
+    this.faqArray = _faq.faqArray;
+  }
 }
