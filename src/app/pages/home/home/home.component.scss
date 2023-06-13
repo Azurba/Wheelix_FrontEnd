@@ -14,7 +14,11 @@ h1, h2{
     font-weight: bolder;
 }
   
-  
+h3{
+    font-size: 30px;
+    margin-top: 25px;
+}
+
 .side-by-side {
     display: flex;
     margin-bottom: 30px;
@@ -59,9 +63,9 @@ h1, h2{
    }
   
    svg{
-        height: 35px;
-        width: 35px;
-        color: black;
+        height: 50px;
+        width: 50px;
+        color: white;
    }
 
    .features{
@@ -70,6 +74,7 @@ h1, h2{
     align-items: center;
     padding-top: 60px;
     padding-bottom: 60px;
+
 }
 
 .feature-box {
@@ -93,4 +98,3 @@ h1, h2{
     border-left: 6px solid green;
     height: 100px;
   }
-
