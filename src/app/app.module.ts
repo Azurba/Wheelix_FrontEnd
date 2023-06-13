@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/nav/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { FaqData } from './Data/FaqData';
 import { HomeService } from './services/home.service';
+import { FleetData } from './Data/FleetData';
 
 
 
@@ -36,7 +37,7 @@ import { HomeService } from './services/home.service';
     MatExpansionModule,
     HttpClientModule
   ],
-  providers: [FaqData, HomeService],
+  providers: [FaqData, HomeService, FleetData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
