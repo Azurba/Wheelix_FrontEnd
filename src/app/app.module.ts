@@ -17,6 +17,7 @@ import { HomeComponent } from './pages/home/home/home.component';
 import { FaqData } from './Data/FaqData';
 import { HomeService } from './services/home.service';
 import { FleetData } from './Data/FleetData';
+import { OrderBuilderComponent } from './pages/orderBuilder/order-builder/order-builder.component';
 
 
 
@@ -24,7 +25,8 @@ import { FleetData } from './Data/FleetData';
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    OrderBuilderComponent
   ],
   imports: [
     BrowserModule,
