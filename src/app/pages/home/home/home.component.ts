@@ -4,6 +4,8 @@ import { FaqData } from 'src/app/Data/FaqData';
 import { Faq } from 'src/app/Model/Faq';
 import { FleetModel } from 'src/app/Model/FleetModel';
 import axios from 'axios';
+import { IPStackAPI } from 'src/app/Model/IPStackAPI';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -54,16 +56,29 @@ export class HomeComponent {
   panelOpenState = false;
 
   faqArray : Array<Faq> = [];
+  apiKey = '';
 
-  constructor(_faq : FaqData) {
+  constructor(private _faq : FaqData, private homeService : HomeService) {
     this.faqArray = _faq.faqArray;
+    this.getApiKey();
   }
 
-  getLocation() {
-    axios.get('http://api.ipstack.com/check?access_key=6317d28f0cb5d50fdabca3349bd707b2')
+  getApiKey(){
+    this.homeService.getApiKey().subscribe({
+      next: (response: IPStackAPI[]) => {
+        this.apiKey = response[0].apiKey;
+      },
+      error: (error) => {
+        console.error('Error getting API key:', error);
+      }
+    });
+  }
+
+  getLocation() {  
+    axios.get(`http://api.ipstack.com/check?access_key=${this.apiKey}`)
       .then(response => {
         const city = response.data.city;
-        console.log(city);
+        // console.log(city);
         //this.myForm.patchValue({ city: city });
       })
       .catch(error => {
