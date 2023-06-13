@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FaqData } from 'src/app/Data/FaqData';
 import { Faq } from 'src/app/Model/Faq';
 import { FleetModel } from 'src/app/Model/FleetModel';
@@ -7,6 +7,7 @@ import axios from 'axios';
 import { IPStackAPI } from 'src/app/Model/IPStackAPI';
 import { HomeService } from 'src/app/services/home.service';
 import { FleetData } from 'src/app/Data/FleetData';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -19,18 +20,26 @@ export class HomeComponent {
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
   });
+
+  driverForm: FormGroup;
+
   panelOpenState = false;
 
   faqArray : Array<Faq> = [];
   fleetArray : Array<FleetModel> = [];
   apiKey = '';
+  city = '';
 
-  constructor(private _faq : FaqData, private homeService : HomeService, private _fleet : FleetData) {
+  constructor(private _faq : FaqData, private homeService : HomeService, private _fleet : FleetData, private formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
     this.faqArray = _faq.faqArray;
     this.fleetArray = _fleet.fleetArray;
     this.getApiKey();
+  
+    this.driverForm = this.formBuilder.group({
+      location: [null, Validators.required],
+      age: [null, Validators.required]
+    });
   }
-
   getApiKey(){
     this.homeService.getApiKey().subscribe({
       next: (response: IPStackAPI[]) => {
@@ -46,11 +55,28 @@ export class HomeComponent {
     axios.get(`http://api.ipstack.com/check?access_key=${this.apiKey}`)
       .then(response => {
         const city = response.data.city;
-        // console.log(city);
-        //this.myForm.patchValue({ city: city });
+        this.city = city;
+        this.driverForm.patchValue({ location: city });
       })
       .catch(error => {
         console.error('Error getting location:', error);
       });
+  }
+
+  browseVehicles(){
+    if(this.driverForm.value.location != null && this.driverForm.value.age != null && this.range.value.start != null && this.range.value.end != null){
+      console.log(this.range.value);
+      console.log('Location:', this.driverForm.value.location);
+      console.log('Driver\'s Age:', this.driverForm.value.age);
+    }else{
+      if(this.range.value.start === null || this.range.value.end === null){
+        this._snackBar.open('Missing Information: Pick-up and Return Date', 'Close', { duration: 30000, horizontalPosition: 'center', verticalPosition: 'bottom' });
+        console.log("Missing Information: Pick-up and Return Date")
+      }
+      if(this.driverForm.value.location === null || this.driverForm.value.age === null){
+        this._snackBar.open('Missing Information: Location and/or Driver\'s age', 'Close', { duration: 30000, horizontalPosition: 'center', verticalPosition: 'bottom' });
+        console.log("Missing Information: Location and/or Driver's age");
+      }
+    }
   }
 }

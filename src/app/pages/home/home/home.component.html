@@ -15,11 +15,12 @@
         <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
         <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
     </mat-form-field>
-    <div class="input-container">
+    <p>Selected range: {{range.value | json}}</p>
+    <div class="input-container" [formGroup]="driverForm">
         <div class="side-by-side">
             <div class="input-wrapper" style="margin-right: 20px;">
                 <h2>Location</h2>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Location">
+                <input class="form-control" placeholder="Enter Location" value="{{ city }}" formControlName="location">
                 <div class="underline"></div>
                 <div class="location" style="margin-top: 10px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
@@ -30,12 +31,12 @@
             </div>
             <div class="input-wrapper" style="margin-left: 20px;">
                 <h2>Driver's Age</h2>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Driver's Age">
+                <input class="form-control" placeholder="Enter Driver's Age" formControlName="age">
                 <div class="underline"></div>
             </div>
         </div>
     </div>
-    <button type="button" class="side-btn">Browse Vehicles</button>  
+    <button type="button" class="side-btn" (click)="browseVehicles()">Browse Vehicles</button>  
 </div>
 
 <!-- CLIENTS -->
