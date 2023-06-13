@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { FaqData } from 'src/app/Data/FaqData';
 import { Faq } from 'src/app/Model/Faq';
 import { FleetModel } from 'src/app/Model/FleetModel';
+import axios from 'axios';
 
 @Component({
   selector: 'app-home',
@@ -56,5 +57,17 @@ export class HomeComponent {
 
   constructor(_faq : FaqData) {
     this.faqArray = _faq.faqArray;
+  }
+
+  getLocation() {
+    axios.get('http://api.ipstack.com/check?access_key=6317d28f0cb5d50fdabca3349bd707b2')
+      .then(response => {
+        const city = response.data.city;
+        console.log(city);
+        //this.myForm.patchValue({ city: city });
+      })
+      .catch(error => {
+        console.error('Error getting location:', error);
+      });
   }
 }
