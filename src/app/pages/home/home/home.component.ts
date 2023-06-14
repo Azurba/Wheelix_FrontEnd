@@ -69,17 +69,15 @@ export class HomeComponent {
     if(this.driverForm.value.location != null && this.driverForm.value.age != null && this.range.value.start != null && this.range.value.end != null){
       this.ob.allow();
       this.ob.setUpInitialData(this.range.value.start, this.range.value.end, this.driverForm.value.location, this.driverForm.value.age);
-      console.log(this.range.value);
-      console.log('Location:', this.driverForm.value.location);
-      console.log('Driver\'s Age:', this.driverForm.value.age);
+      //console.log(this.range.value);
+      //console.log('Location:', this.driverForm.value.location);
+      //console.log('Driver\'s Age:', this.driverForm.value.age);
     }else{
       if(this.range.value.start === null || this.range.value.end === null){
         this._snackBar.open('Missing Information: Pick-up and Return Date', 'Close', { duration: 30000, horizontalPosition: 'center', verticalPosition: 'bottom' });
-        console.log("Missing Information: Pick-up and Return Date")
       }
       if(this.driverForm.value.location === null || this.driverForm.value.age === null){
         this._snackBar.open('Missing Information: Location and/or Driver\'s age', 'Close', { duration: 30000, horizontalPosition: 'center', verticalPosition: 'bottom' });
-        console.log("Missing Information: Location and/or Driver's age");
       }
     }
   }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import * as L from 'leaflet';
 import { icon, Marker } from 'leaflet';
 import { mapLocationsData } from 'src/app/Data/mapLocationsData';
@@ -22,31 +23,29 @@ export class OrderBuilderComponent {
   isLinear = false;
 
   pointsOfInterest : mapLocations[] = [];
+  closestLocations: mapLocations[] = [];
 
   start? : Date;
   end? : Date;
-  location : string = 'Fort Collins';
+  location : string = '';
   age : number = -1;
 
   map?: L.Map
 
-  constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData, private ob : OrderBuilderService) {
+  constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData, private ob : OrderBuilderService, private _snackBar: MatSnackBar) {
     this.pointsOfInterest = mapLocations.pointsOfInterest;
     console.log(this.pointsOfInterest);
   }
 
   ngOnInit() : void{
-    setTimeout(() => {
-      this.initializeMap();
-    }, 0);
     this.start = this.ob.start;
     this.end = this.ob.end;
     this.location = this.ob.location;
-    // this.age = this.ob.age;
-    // console.log(this.start);
-    // console.log(this.end);
-    // console.log(this.location);
-    // console.log(this.age);
+    this.findMatches(this.location);
+    setTimeout(() => {
+      this.initializeMap();
+    }, 0);
+    console.log(this.location);
   }
 
   initializeMap(): void {
@@ -72,21 +71,33 @@ export class OrderBuilderComponent {
       popupAnchor: [1, -34],
       tooltipAnchor: [16, -28],
       shadowSize: [41, 41]
-  });
-  Marker.prototype.options.icon = iconDefault;
-  this.pointsOfInterest.forEach(poi => {
-    if(this.map){
-      const marker = L.marker(poi.coordinates).addTo(this.map);
-      marker.on('click', () => {
-        this.showPOIDetails(poi);
+    });
+    Marker.prototype.options.icon = iconDefault;
+    if(this.closestLocations.length == 0){
+      this.pointsOfInterest.forEach(poi => {
+        if(this.map){
+          const marker = L.marker(poi.coordinates).addTo(this.map);
+          marker.on('click', () => {
+            //this.showPOIDetails(poi);
+          });
+        }
+      });
+    }else{
+      this.closestLocations.forEach(poi => {
+        if(this.map){
+          const marker = L.marker(poi.coordinates).addTo(this.map);
+          marker.on('click', () => {
+            //this.showPOIDetails(poi);
+          });
+        }
       });
     }
-  });
   }
-  showPOIDetails(poi: mapLocations): void {
-    // Implement your logic to display the details of the point of interest
-    console.log(poi.name, poi.address);
-  }
+  //Discomment this if you want to add logic when the user clicks on the map markers
+  
+  // showPOIDetails(poi: mapLocations): void {
+  //   console.log(poi.name, poi.address);
+  // }
 
   selectLocation(selectedCoordinates : L.LatLngExpression): void {
     if (this.map) {
@@ -94,5 +105,20 @@ export class OrderBuilderComponent {
     }
   }
   
+  findMatches(city: string): void {
+    console.log(city);
+    const formattedLocation = this.location.toLowerCase().replace(/^(.)(.*)$/, (_, firstChar, rest) => firstChar.toUpperCase() + rest.toLowerCase());
+    this.closestLocations = this.pointsOfInterest.filter(poi => {
+      const formattedAddress = poi.address.toLowerCase();
+      return formattedAddress.includes(formattedLocation.toLowerCase());
+    });
   
+    if (this.closestLocations.length === 0) {
+      this._snackBar.open(`Sorry! We do not have any locations in ${city}`, 'Close', {
+        duration: 30000,
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom'
+      });
+    }
+  } 
 }

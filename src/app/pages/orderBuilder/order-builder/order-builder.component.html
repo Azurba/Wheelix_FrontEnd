@@ -7,7 +7,19 @@
           <mat-sidenav opened mode="side">
           </mat-sidenav>
           <mat-sidenav-content class="scrollable-content">
-            <div *ngFor="let card of pointsOfInterest" class="sidenav-content">
+            <div *ngIf="closestLocations.length == 0">
+              <div *ngFor="let card of pointsOfInterest" class="sidenav-content">
+                <div class="card border-primary mb-1"  style="width: 90%;">
+                  <div class="card-body">
+                    <h2 class="card-title">{{card.name}}</h2>
+                    <p class="card-text">{{card.address}}</p>
+                    <button type="button" class="btn btn-primary" style="margin-right: 20px;" (click)="selectLocation(card.coordinates)">View on Map</button>
+                    <button type="button" class="btn btn-success" (click)="selectLocation(card.coordinates)">Select This Location</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngFor="let card of closestLocations" class="sidenav-content">
               <div class="card border-primary mb-1"  style="width: 90%;">
                 <div class="card-body">
                   <h2 class="card-title">{{card.name}}</h2>
