@@ -1,6 +1,6 @@
 <mat-stepper #stepper>
   <mat-step>
-    <h1>Select your Location</h1>
+    <h1 style="font-weight: bolder; font-size: 30px;">Select your Location</h1>
     <div class="row">
       <div class="col-3">
         <mat-sidenav-container>
@@ -13,8 +13,8 @@
                   <div class="card-body">
                     <h2 class="card-title">{{card.name}}</h2>
                     <p class="card-text">{{card.address}}</p>
-                    <button type="button" class="btn btn-primary" style="margin-right: 20px;" (click)="selectLocation(card.coordinates)">View on Map</button>
-                    <button type="button" class="btn btn-success" (click)="selectLocation(card.coordinates)">Select This Location</button>
+                    <button type="button" class="btn btn-primary" style="margin-right: 20px;" (click)="viewOnMap(card.coordinates)">View on Map</button>
+                    <button type="button" matStepperNext class="btn btn-success" (click)="selectLocation(card.coordinates, card.name, card.address)">Select This Location</button>
                   </div>
                 </div>
               </div>
@@ -24,8 +24,8 @@
                 <div class="card-body">
                   <h2 class="card-title">{{card.name}}</h2>
                   <p class="card-text">{{card.address}}</p>
-                  <button type="button" class="btn btn-primary" style="margin-right: 20px;" (click)="selectLocation(card.coordinates)">View on Map</button>
-                  <button type="button" class="btn btn-success" (click)="selectLocation(card.coordinates)">Select This Location</button>
+                  <button type="button" class="btn btn-primary" style="margin-right: 20px;" (click)="viewOnMap(card.coordinates)">View on Map</button>
+                  <button type="button" matStepperNext class="btn btn-success" (click)="selectLocation(card.coordinates, card.name, card.address)">Select This Location</button>
                 </div>
               </div>
             </div>
@@ -41,6 +41,9 @@
     <h1>Select your Vehicle</h1>
   </mat-step>
   <mat-step>
-    <h1>Checkout</h1>
+    <h1>Select any Additionals</h1>
+  </mat-step>
+  <mat-step>
+    <h1>Confirm your Order</h1>
   </mat-step>
 </mat-stepper>

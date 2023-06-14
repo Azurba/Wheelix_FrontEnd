@@ -99,10 +99,16 @@ export class OrderBuilderComponent {
   //   console.log(poi.name, poi.address);
   // }
 
-  selectLocation(selectedCoordinates : L.LatLngExpression): void {
+  viewOnMap(selectedCoordinates : L.LatLngExpression): void {
     if (this.map) {
       this.map.setView(selectedCoordinates, 15);
     }
+  }
+
+  selectLocation(selectedCoordinates : L.LatLngExpression, selectedName : string, selectedAddress : string): void {
+    // console.log(selectedCoordinates)
+    // console.log(selectedName)
+    // console.log(selectedAddress)
   }
   
   findMatches(city: string): void {
