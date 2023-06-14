@@ -20,8 +20,6 @@ export class OrderBuilderComponent {
   });
   isLinear = false;
 
-  shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
-
   pointsOfInterest : mapLocations[] = [];
 
   constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData ) {
@@ -36,7 +34,7 @@ export class OrderBuilderComponent {
   }
 
   initializeMap(): void {
-    const map = L.map('map').setView([51.505, -0.09], 13);
+    const map = L.map('map').setView([39.658775, -98.333763], 13);
   
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
