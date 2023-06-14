@@ -12,7 +12,7 @@
                 <div class="card-body">
                   <h2 class="card-title">{{card.name}}</h2>
                   <p class="card-text">{{card.address}}</p>
-                  <button type="button" class="btn btn-primary">Select this Location</button>
+                  <button type="button" class="btn btn-primary" (click)="selectLocation(card.coordinates)">Select this Location</button>
                 </div>
               </div>
             </div>

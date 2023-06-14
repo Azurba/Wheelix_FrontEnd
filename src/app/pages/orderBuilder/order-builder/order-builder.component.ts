@@ -28,6 +28,8 @@ export class OrderBuilderComponent {
   location : string = 'Fort Collins';
   age : number = -1;
 
+  map?: L.Map
+
   constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData, private ob : OrderBuilderService) {
     this.pointsOfInterest = mapLocations.pointsOfInterest;
     console.log(this.pointsOfInterest);
@@ -49,14 +51,14 @@ export class OrderBuilderComponent {
 
   initializeMap(): void {
     // const map = L.map('map').setView([39.658775, -98.333763], 13);
-    const map = L.map('map');
+    this.map = L.map('map');
     const usaBounds = L.latLngBounds([[49.384358, -125.000000], [24.396308, -66.934570]]);
-    map.fitBounds(usaBounds);
-    map.setZoom(4);
+    this.map.fitBounds(usaBounds);
+    this.map.setZoom(4);
   
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
-    }).addTo(map);
+    }).addTo(this.map);
   
     const iconRetinaUrl = 'assets/marker-icon-2x.png';
     const iconUrl = 'assets/marker-icon.png';
@@ -73,15 +75,24 @@ export class OrderBuilderComponent {
   });
   Marker.prototype.options.icon = iconDefault;
   this.pointsOfInterest.forEach(poi => {
-    const marker = L.marker(poi.coordinates).addTo(map);
-    marker.on('click', () => {
-      this.showPOIDetails(poi);
-    });
+    if(this.map){
+      const marker = L.marker(poi.coordinates).addTo(this.map);
+      marker.on('click', () => {
+        this.showPOIDetails(poi);
+      });
+    }
   });
   }
   showPOIDetails(poi: mapLocations): void {
     // Implement your logic to display the details of the point of interest
     console.log(poi.name, poi.address);
   }
+
+  selectLocation(selectedCoordinates : L.LatLngExpression): void {
+    if (this.map) {
+      this.map.setView(selectedCoordinates, 15);
+    }
+  }
+  
   
 }
