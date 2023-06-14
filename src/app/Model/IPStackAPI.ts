@@ -1,4 +1,4 @@
-export class IPStackAPI{
-    id : number = 0;
-    apiKey : string = '';
+export interface IPStackAPI{
+    id : number;
+    apiKey : string;
 }

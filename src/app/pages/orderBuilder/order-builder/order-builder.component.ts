@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import * as L from 'leaflet';
 import { icon, Marker } from 'leaflet';
+import { mapLocationsData } from 'src/app/Data/mapLocationsData';
+import { mapLocations } from 'src/app/Model/mapLocations';
 
 
 @Component({
@@ -18,8 +20,11 @@ export class OrderBuilderComponent {
   });
   isLinear = false;
 
-  constructor(private _formBuilder: FormBuilder) {
-    
+  pointsOfInterest : mapLocations[] = [];
+
+  constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData ) {
+    this.pointsOfInterest = mapLocations.pointsOfInterest;
+    console.log(this.pointsOfInterest);
   }
 
   ngOnInit() : void{
@@ -49,10 +54,18 @@ export class OrderBuilderComponent {
       shadowSize: [41, 41]
   });
   Marker.prototype.options.icon = iconDefault;
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data © OpenStreetMap contributors'
-  }).addTo(map);
+  this.pointsOfInterest.forEach(poi => {
+    const marker = L.marker(poi.coordinates).addTo(map);
+    marker.on('click', () => {
+      this.showPOIDetails(poi);
+    });
+  });
 
+  }
+
+  showPOIDetails(poi: mapLocations): void {
+    // Implement your logic to display the details of the point of interest
+    console.log(poi.name, poi.address);
   }
   
 }

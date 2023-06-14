@@ -19,6 +19,7 @@ import { FaqData } from './Data/FaqData';
 import { HomeService } from './services/home.service';
 import { FleetData } from './Data/FleetData';
 import { OrderBuilderComponent } from './pages/orderBuilder/order-builder/order-builder.component';
+import { mapLocationsData } from './Data/mapLocationsData';
 
 
 
@@ -43,7 +44,7 @@ import { OrderBuilderComponent } from './pages/orderBuilder/order-builder/order-
     MatSnackBarModule,
     MatStepperModule
   ],
-  providers: [FaqData, HomeService, FleetData],
+  providers: [FaqData, HomeService, FleetData, mapLocationsData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
