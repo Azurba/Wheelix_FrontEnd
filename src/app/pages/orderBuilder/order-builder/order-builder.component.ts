@@ -20,6 +20,8 @@ export class OrderBuilderComponent {
   });
   isLinear = false;
 
+  shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
+
   pointsOfInterest : mapLocations[] = [];
 
   constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData ) {

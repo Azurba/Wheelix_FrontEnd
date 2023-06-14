@@ -10,6 +10,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,7 +43,8 @@ import { mapLocationsData } from './Data/mapLocationsData';
     MatExpansionModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSidenavModule
   ],
   providers: [FaqData, HomeService, FleetData, mapLocationsData],
   bootstrap: [AppComponent]
