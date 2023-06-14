@@ -9,6 +9,10 @@ export class OrderBuilderService {
   //This property wil be set to true if the user has fullfilled the date, location and age
   //correctly in the home component
   private isAllowed = true;
+  start? : Date;
+  end? : Date;
+  location : string = '';
+  age : number = -1;
 
   constructor(private router : Router) { }
 
@@ -19,5 +23,12 @@ export class OrderBuilderService {
 
   isUserAllowed(){
     return this.isAllowed;
+  }
+
+  setUpInitialData(start : Date, end : Date, location : string, age : string){
+    this.start = start;
+    this.end = end;
+    this.location = location;
+    this.age = parseInt(age);
   }
 }

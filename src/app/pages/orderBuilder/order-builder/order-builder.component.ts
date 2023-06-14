@@ -4,6 +4,7 @@ import * as L from 'leaflet';
 import { icon, Marker } from 'leaflet';
 import { mapLocationsData } from 'src/app/Data/mapLocationsData';
 import { mapLocations } from 'src/app/Model/mapLocations';
+import { OrderBuilderService } from 'src/app/services/order-builder.service';
 
 
 @Component({
@@ -22,7 +23,12 @@ export class OrderBuilderComponent {
 
   pointsOfInterest : mapLocations[] = [];
 
-  constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData ) {
+  start? : Date;
+  end? : Date;
+  location : string = 'Fort Collins';
+  age : number = -1;
+
+  constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData, private ob : OrderBuilderService) {
     this.pointsOfInterest = mapLocations.pointsOfInterest;
     console.log(this.pointsOfInterest);
   }
@@ -31,10 +37,22 @@ export class OrderBuilderComponent {
     setTimeout(() => {
       this.initializeMap();
     }, 0);
+    this.start = this.ob.start;
+    this.end = this.ob.end;
+    this.location = this.ob.location;
+    // this.age = this.ob.age;
+    // console.log(this.start);
+    // console.log(this.end);
+    // console.log(this.location);
+    // console.log(this.age);
   }
 
   initializeMap(): void {
-    const map = L.map('map').setView([39.658775, -98.333763], 13);
+    // const map = L.map('map').setView([39.658775, -98.333763], 13);
+    const map = L.map('map');
+    const usaBounds = L.latLngBounds([[49.384358, -125.000000], [24.396308, -66.934570]]);
+    map.fitBounds(usaBounds);
+    map.setZoom(4);
   
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
@@ -60,9 +78,7 @@ export class OrderBuilderComponent {
       this.showPOIDetails(poi);
     });
   });
-
   }
-
   showPOIDetails(poi: mapLocations): void {
     // Implement your logic to display the details of the point of interest
     console.log(poi.name, poi.address);
