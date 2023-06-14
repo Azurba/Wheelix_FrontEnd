@@ -1,0 +1,151 @@
+{
+    "id": 0,
+    "model": "Edge",
+    "manufacturer": "Ford",
+    "type": "SUV",
+    "color": "Red",
+    "bagSupport": 5,
+    "peopleSupport": 4,
+    "licencePlate": "ABC-123",
+    "price": 85,
+    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/SUVS/SFAR.doi.352.high.imageSmallThreeQuarterNodePath.png/1551905658879.png"
+},
+{
+    "id": 0,
+    "model": "Edge",
+    "manufacturer": "Ford",
+    "type": "SUV",
+    "color": "White",
+    "bagSupport": 5,
+    "peopleSupport": 4,
+    "licencePlate": "ABC-124",
+    "price": 85,
+    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/SUVS/SFAR.doi.352.high.imageSmallThreeQuarterNodePath.png/1551905658879.png"
+},
+
+{
+    "id": 0,
+    "model": "Edge",
+    "manufacturer": "Ford",
+    "type": "SUV",
+    "color": "Black",
+    "bagSupport": 5,
+    "peopleSupport": 4,
+    "licencePlate": "ABC-125",
+    "price": 85,
+    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/SUVS/SFAR.doi.352.high.imageSmallThreeQuarterNodePath.png/1551905658879.png"
+},
+
+{
+    "id": 0,
+    "model": "Versa",
+    "manufacturer": "Nissan",
+    "type": "Compact",
+    "color": "Black",
+    "bagSupport": 2,
+    "peopleSupport": 5,
+    "licencePlate": "ABD-123",
+    "price": 75,
+    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/CARS/CCAR.doi.768.high.imageSmallThreeQuarterNodePath.png/1611777286679.png"
+},
+{
+    "id": 0,
+    "model": "Versa",
+    "manufacturer": "Nissan",
+    "type": "Compact",
+    "color": "Red",
+    "bagSupport": 2,
+    "peopleSupport": 5,
+    "licencePlate": "ABD-124",
+    "price": 75,
+    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/CARS/CCAR.doi.768.high.imageSmallThreeQuarterNodePath.png/1611777286679.png"
+},
+{
+    "id": 0,
+    "model": "Versa",
+    "manufacturer": "Nissan",
+    "type": "Compact",
+    "color": "White",
+    "bagSupport": 2,
+    "peopleSupport": 5,
+    "licencePlate": "ABD-125",
+    "price": 75,
+    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/CARS/CCAR.doi.768.high.imageSmallThreeQuarterNodePath.png/1611777286679.png"
+},
+
+{
+    "id": 0,
+    "model": "Pacifica",
+    "manufacturer": "Chrysler",
+    "type": "Compact",
+    "color": "White",
+    "bagSupport": 7,
+    "peopleSupport": 7,
+    "licencePlate": "ABE-123",
+    "price": 75,
+    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/VANS/MVAR.doi.768.high.imageSmallThreeQuarterNodePath.png/1618263096675.png"
+},
+{
+    "id": 0,
+    "model": "F150",
+    "manufacturer": "Ford",
+    "type": "Compact",
+    "color": "White",
+    "bagSupport": 4,
+    "peopleSupport": 4,
+    "licencePlate": "ABF-123",
+    "price": 115,
+    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/TRUCKS/PPAR.doi.768.high.imageSmallThreeQuarterNodePath.png/1512427309887.png"
+},
+
+{
+    "id": 0,
+    "model": "F750",
+    "manufacturer": "Ford",
+    "type": "Compact",
+    "color": "White",
+    "bagSupport": 0,
+    "peopleSupport": 2,
+    "licencePlate": "ABG-123",
+    "price": 115,
+    "image": "https://t3.ftcdn.net/jpg/01/62/45/82/360_F_162458270_D7v0YbzB2vRDYzyqkEx0OzrNfjv9DHCH.jpg"
+},
+
+{
+    "id": 0,
+    "model": "Corvette",
+    "manufacturer": "Chevrolet",
+    "type": "Compact",
+    "color": "White",
+    "bagSupport": 0,
+    "peopleSupport": 2,
+    "licencePlate": "ABH-123",
+    "price": 215,
+    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/CARS/USAR.doi.200.high.imageSmallThreeQuarterNodePath.png/1654786523359.png"
+},
+{
+    "id": 0,
+    "model": "S",
+    "manufacturer": "Tesla",
+    "type": "Compact",
+    "color": "White",
+    "bagSupport": 3,
+    "peopleSupport": 5,
+    "licencePlate": "ABG-123",
+    "price": 150,
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgVFRYYGRgVGhgYGhgaGhgaGBkZGBgaGRgaGhgcIy4lHB4rIRgYJjgmKy8xNTU1GiU7QD80Py40NTEBDAwMDw8PEQ8PET8dGB0/NDQ0PzQxMTQ0Pz8/NDQ0MTQ0MTE0ND8xMTE0ND8/MTQ/ND8xNDE0MTQxPz8xPzExMf/AABEIAMIBAwMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcCAQj/xABGEAACAQIDBAcEBwYEBAcAAAABAgADEQQSIQUGMUEHIlFhcYGREzJCoVJykrHB0dIUQ1NigqKTssLhFzNEYxUWIySD8PH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A7NERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARIfa+8FDD6M2Z/oLYt58h5ylbU31rvcUyKS/ygM/2mFvQCB0p3AFyQAOZNh6yMxG8eET3q9O45Bgx9FvOU4+jXdDVqmoy6daox1J4ZVY39BIZ0Xv9YHW6+/mCXg7v9VGH+a00KvSThh7tOqfHIP8AUZz3/wAvYhgGWk1mAIN1vYi40veRWKwhQ2ZWU9jKVNvAiB02p0nJ8ND1qAfcpms/SgeVBB41Cf8ASJzFlWYmy98DqA6Tan8Gn9tpmTpOPPDr5VD+icmJHfPJI7YHZU6TKfxUGHg6n7wJsJ0k4bnTqjwCH/VOIF7c5dtw93Vqr+01xemCRTQ8KhX3nYc1BuLcyDyGodO2dvdQraota3b7NivqtxJdcfTPxW8QR94nKt6t+Fw7GjRUM66EcETsBy6lv5QQBwueEr2E3oxlUOfa5WAzKoRMunEaqT84HflcHUEEd2s9ziWyd9MUpBfK3hdG9RcfKdA2FvlSrEI/UY8M2l/Dk3lw5gQLbE+Az7AREQEREBERAREQEREBERARNfFYlaa5mOnAdpPYPnIPaO9VOiLupsRoAesTbQAdvDwvAn69ZUUsxCqBcsTYAeM5/vFvuWumHJVeBqHRm+qOQ7+PhKzvBvNVxLdb3b9SktyoPK/0mklsTdy1qmI1biKfwr9btPdw8YEfs/ZlbEHP7qHXO1+t2lRxY9/zlqwGyKVKxVczfTbVvLkvlN28jtv7R9hQep8QFk73bRfz8oFV3x2znqeyU9Wnx735+nD1kPsSma+ISnyJu31F1b1tbzkFUrEkkm5OpMtO4+Mw9EVKtaoiMbIqnVsoszHKLmxJA/pgdFq2ysL5RY6jkLcfKcSr4kXOUki5sTxIvoSO20vm3N8sM1GolNnZ3RkBCEAFgRqWtOZu0DfrVBkVwesWdWH1QhU+ecj+maRrGYrwBA9F5eN2MNszEWR0KVvoPUfK57UIYA/V4+PGUUrPLNaBetv7Lo1sZSwGFpohBzVnUdZVtcjMbnqrc25lklz3p2iuEwwSiApULTpKOAa2h/pUZvHL2yK6MtjGlRbF1LmpiRdSdWFMag37XPW8Asjd6Kxr4gj4aV0HYW0Ln108FED7gNg08Rhs4poKjoevl19oLgknjqRx75EbMwmU3EtuxdnYxaY9n1UOqg5ATfmMwvYzRxGx8Smpoue9QH+SEwMuw9g0ayP12R0blYqVbVTbyI4yLrOKbtSqAWVsp8jowPEciDMGI2lVw/WRihYZW0HLUAhh4yv4rG1cRUJAZ3a3urqbAAaKO4QOu7o7wOrGhVJZQMyOdWCggMD22uD2kX5g3vqMCAQbg6g9s5Zuhsiqio9cZWVSoS9zY8277aW8ZdsBi2p9UjMnL6S+F+I7oFgiaI2lSuAWyk6dYEC/Zc6fOb0BERAREQERMdWoFF2IA7SbQMkSNqbWW9lVnPcLD1M8VNoNbgFPYDm+dh90CUJmrWx9NeLX7gCfukPWxBbiSfOa7Xgfdt4o1VX2am6kkBzlViRbWwYjylFx+7OPquXZ6JJ/ncADkF6mgl5APbPoEChYDdjH0Xzp+yswBALs5tfmBlGvf3zfqYfa54NhR4FvxUy4BO+fcggUOrs3bJ/fUvJwv3JI3G7s7UqC1RlqAG4Bq3APaARa86dln3LA4++5OP8A4SHwqJ+Jmu+5+PH/AE9/CpT/AFTs+WLQOIPurjx/0r+TUz9zTE27GO54Sr6KfuM7izgT0Ec8F820+XGBwg7vY0f9LW+wT90wPsjFDjhsR/hOfmBP0B+zn4nA7gPxP5QBTHMsfNvkogfnw7PxPD9mr/4VT9Ms26m4dWsy1cUhp0VN8jXFSpzC5OKKeZNjbgNbjr/tSPcQ93uqPPW49J9piwsx1NyTyuezuHAdwECJ2xjTTpsURiVUkBVNlC2APCwAuD4KZQNmvT9oBWdFQtdiWBuAASLA31tbznS8fh0dGRrlWBBAJFweWkplLdxKbs9PMwPw1Oso8LwJ1t8cEP3wPcqsfwmGpvzheCl28KbfjNrCVgAAVUd1gB6SQRwBdRy5D8oEAuzaWMJrVaTgaBRUuma1+tlBuRrbU8pK4XZ1OkLU0VB/KAv3anzmRcS1yXARbCxYhSTz6tyezjbwmGttFBwux7hYepgbyOBPBrE6XHr+WkiDtF2NlVV9Sfnp8pL4WgTqdTA+tSuPIye2Ji/aUVY8R1W8V0/KQ+JxSILNe55DUzc3UW1JgObs3r/+QJ2IiAiJE7xbVGGoM/Fj1UXiWcgnhzsAzHuUwPuN2qqsyIQXWwbnlJFwCO2xB85Fs5ZtbsTzP/3QTn2B2m7t7df+eoY/y4hFu7U3/nF2KtyPcTfoGBcFA44OAV8CLwNnMEFhx5mazvcz47XmPLA9kT6J8Cz0qwAnoT6FnoCB8F56CxED6FnyfSZ9ygC7cPl5mB4BJ4C8CifiPkPzmnW2/hkJX2qEjiqXqN9lAT8pp195EAutKs3eyrSXzNVlIHlAmgVTgAPvP4kwSx/lHqfTgPnKnW3ry2b/ANsua4DVcUi3sbHIqK+nDS9+F5IUMVjKtNatNsKUc2Vh7Vw2upButwLE37oE4KS89fra/LgPKfS0htmYmu2c1WpsoOVCiOma18zdZ2uL6Dh7pOoIm3VxOUXOvYIG07zXdzKRt7f6jRYqM1VwbEKQEUjkWPPuF++bO7u+dLEnIFZHGpRiLkdqke8PnAsVeuhIQvr9Eat6DWZCgA1IUekh6dNxUZw7m9wik3CBrZ8veSPLhMxpkm5JPjAyvWRfdBbw0HrPLYtyLLZR/Lx9Z8WmJ7sIGuKNzc6ntOp9Z7FATIXnnPAyYekLiSyVwokbhhMO28X7KhUqfQRmHiBp84HMukDbtWtXdUcqlI5bKSMzD3mJHGx0HhfnOn9D+1mxGEbOSXptlZj8VuB8bWv3zlmH2cjUTfVyB17m+djqD2jUA+Jl46C1KriF5FyfQIPxgddiIgJRN5cI+Kq03VwiUldVUrmDl8oznUW0VgOdmvpqDeW4Gc+2Xij7NQddBAgcNuzXSsGRQiA3a7Aqb8cgGp4niB5S2UsVSpU0R6tNMiIvWdV4KBwJmKrizwUkDv4yGr7DwlQlnw9NmOpbKAxPew1gTo2vhjwxFE//ACJ+qZ0xlFvdqUz4Oh+4ynVtysA37oj6ruPle0jdodHmHKk0GZHGqh7MhPINpcDv1gdLSx4EHwIMyBJyMbGrYkqns6eHCKvtagSziqCQyU7EAJYJw00vc3N5BNzXX3MfiV8Cw+54HTQk+5Zz+lsTFp7m06/gwDf5iZvYX/xBOOMSoP8AuUF+9GUwLllmhtDatKl1Xa7kXCL1nI7co4DvNh3z5hcWzWFQgdppgi/qSVHhr3zbrYGi65WRGXw7eJvxB74FC23v1luquE5Wp2qONPicgongoe0q2J3lD6s2a5H/ADM9Zh4BwUXyQTpWJ3OwjnUEDsApn5shb1MUd0MGvwX8Tb/KBA5biNtM9hmr24ZQxRD/AEI6r8ppK2ZrDDhm5BgXYm/NbEn1nbKe7+GX3aS6fWNvC50nt9lpf33VfoK+QeOZbPf+qBy/C7AxOIqCtjT+z4dAoLvlphaa/u6VPTIOzQceZl4pYtsSwSipp4VFCKbFS6jknMA6XYchYG+ol0wmGU5rIWHxH/1H+01z85nbFpyuYGFFAAAFgBYAaAAcABKXvzt000yIevUuq24qo95h3628T3S3YjEXUkaTm77aL4x0A6qdQHtIYA/PNApWReBH5zzRdqNRK1M6owYeXEHuIuPOW2jtIYjEVaDIHRXYAsAbBTlFjxFyNLaiR+8Gxjh2zLdkbTXVkJ1CufDgfXXiHU8HiFqU0qL7rorjwYX/ABmW8re5WLDYVEB1plkI7Be6/IiTxeBkZ5jZ54LQtMmB5Lz2iEzcw2z2aSK06NPV2BPZx+UDTwlBrXteV3pBrZcKU51KiJ43bMR6KZZq22hfKgA7zx9OUom/+KzthUJ96sG+zZb/AN8DzRxuHTDKLO1eu+YIqnTMSoJNtFCtcnnmtLb0TYXKmIa371x/ef0iVqvTxC4laNKqhRjlqKyIWCLlGc3AvYG2nCynnL70cUMuEL/xKtcj6q1XQX7+qT5wLbERAx1FuCBoSCJQtl4VWQqrqxRmRrG9nQlWU94IM6DOA4nbL4HaGJyXK+3qmonJkZs4Nu0Zj1uWnKB0KrgHHfNc0WHEGSGB2zRqgFHU5gDa4vYi408DNwOD2QIW9tTy1OlzYDs5zZWrfiq/PymfHquUHQaj56TUCGBmzLyRfUialXELnyZeK3BBvqDYgj0mVAbC4seYve3dfnMSYfNiF5XRr+N11gfLT0BJUYJZ9GCWBGreZEqMNRJJcEs9/sSwIz9qvx4wax7ZI/sCcZq4irhk9+qi+LCBqPWbtPqZru5M8YjeTZ6e9iE8rmRWK352cuoao31UP4wJUTIsp2I6SMN8FCq31ii/iZYd39qnE0RWyZAzMAt8xsrFb3sOYMDexlUJTZz8KlvQXnL8DhHFT21tXdRbmX0LC3aSSZf96apXDPYBi2VQpvrmYLbTXnykTgMLTNNi+YViM6IuW6DJbOGt1zZg4D8NLcYEbWals2jYZauNrktlGq02Ot2txtewHM9kx7D2fXqUagxV19qNM3vknUMV+GxsdddBpM7bep4RyUwTO7C/tHVFUra/VKhsq63yi3Ed09bv721cbXKOlKnTVWfJSQKTbkzm7c+VoEbuHXZK70j8Sm4/nRrH729J0JKZM53sQBdqEDhnrfNXY/OdEfG2FlGvdrA2EwoGrGwmRsZSQdUZj2nhIwpVfW2UdpmjjcZhaIvWrqT9EEH7oEnidsO3VU2HYv8AtNVaVV+WUdp/KVXG9IFFNMPRLfzNoPz++VvHb6Ympxay/RHCB0ipUpUr5qgLdgN7emg85QN7dsLVxCGmbiiNDyz5gx7tLL85WcZi2qMWY8bactBbQTGjwOqY32bMMQzuoWlTqK626xNFcwa/I218J1Xc/CGlgsOjCz+zVnHY79dx9pjOBbuU8RXZKYR3oq6sy2spCnNlLEcD2X5z9F7PqOyA1FCseQ5QNyIiBq46oyoxUXYDQcfE252Fzbnac62jupRrn2uUM5vZ8xvckknjYte+vGdPkbi9m02JYEo54upAJ+sD1W8wYHFttbuOKAUrZqTFUYadUnMvgQSw8LSnU9tYuibLWrJ3FmI8g1xO77SwOLVupUwtROypnRv7QwPqJVtuY9aGmIwYZeb0Wzp33AGZfMCBQ8PvzjltmqB1GtnVeWoN1A1BAMlaXSXXHvUlPg35rMxxmxavvIUJ7gPncGBsDZT+5iWXzJ++8DLQ6TAAFNA2AAFspsBoONpno9JNJXz+ya55EnS4AsNSAOqJotuLhm9zGr/Vb8hMT9HhPuYukfG36oE4vSvS54ep5Mn5z1/xVofwKv8AZ+qV5ujiv8Nak3n/ALzyOjbFcnpnzgWcdK1D+DV/s/VNjC781cSGNGl7NB1c72ZmbsUDTTme8eVTHRnjORT52l+2Zun7KmqaWUW8T8TacyST5wKjtzaLk2qVKh7dTl8uXylOxTLUPVWqR2BL38y34TpO1dzK9Q9SpkHdcH1kenRnVb38S3zMCgDC/wDaqeJIT7109ZnoUaRRy4QMCoUPV8czWQgtxGg7DOi4boqo/HVc+A/2E3KPRPhc+Zqtci+igIoA7LkEwOV06SVHFKkocljlCqQzn4VGYk5dCWZrWF51nYuEFCjTogg5FAJHBmOrsO4sSZYdl7mYTDgikmW/vMTd2+s7XNu7h3TNicFRQe+oPewgUjfPFulBfZmzO6JfsBuT8gZBGvkpuUCB8LTV6gIIzNVdcqZFsHGqBg38RuYln2vh1qFALHI4YcxcKwBPaBe9udrc5SsCi4nGYyipIWopQEnmlWkA1+f/ACwYGaltbGUaQxGFyPhka7UiiE4dybkMVAYrro9+Fr253XYu8rYzDms+GalkzKaosyEi19ffA142I5XlJ6PqmIoVagem5pdalVJXqBsxWxvodbg+OslN79spRwwwlABAb9ReCoxJY+JuQO68CtbD2tSp4t8RVPVPtGAtclnbQW8GPpJTHdIR1GHpAfzN+UpwoltZs0sETygZMft/F1/fqtb6K9USPTDEm54nmdT6yfwmxnbgpln2VuXUe11tAolHZ5PKS+B3cZ+CfKdZ2VuIi2LiWvBbGpUxoogco2T0eM9iygeUuuy9wcPTsWUE+AlyVQOAnuBp4TZ9OmLIoHlNyIgIiICaWJwpbgZuxAq2N2M7cCZWtp7sOwIIJnTp8IgcCx+4fEhCPC8gcTue68Fb0n6XNFTxA9JhfZ9I8UX0gfmB9h1E4XHlMLYasvxN6sJ+m6u7+HbjTE0qu52Eb93A/N/tq4+N/tGP/EsSPjf1n6CrdHuEbkw9Jo1ejDDHgzDyH5wOI4feLFobpWcGSidIWPAsal++7X++dNq9E1I8Kp81/wB5pVeh9TwrL5qYHPm6Qsef3h9W/OYn37x5/et9p/1S9VOhtuVZPRprv0NVuVan/d+UClHfbHfxW+0/6p8O+OMPGoftP+qW1+hvFcqtL+78pgbodx3KpR+035QKqd6cSeLA+OY/6plp72VhbRT6ywnog2jyah9tv0zx/wAINpfSofbb9MCKG+NcspyplHFdet/VyPh85PUt9MMxDtRZKg+JVU37RcEX5dkwjoh2l9LD/wCI/wCibeG6HsaT169BR3Z3PpYQMG1ukN2QpQTJe93a3Pj1Rx58T5StYDZVbEtnIZgxuWPxnu7ROsbD6J8NSIauxrsOTCyD+jn53l5w2yaKCyoBbugcd2duPVe11tLbsvcFRYvOhBAOAE9wITBbu0afwiS1Oiq8ABMsQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERED//Z"
+},
+
+{
+    "id": 0,
+    "model": "Wrangler",
+    "manufacturer": "Jeep",
+    "type": "Compact",
+    "color": "White",
+    "bagSupport": 3,
+    "peopleSupport": 5,
+    "licencePlate": "ABI-123",
+    "price": 130,
+    "image": "https://rare-gallery.com/uploads/posts/865665-2019-Wrangler-Unlimited-Overland-Latam-Jeep-White-background.jpg"
+}
+
