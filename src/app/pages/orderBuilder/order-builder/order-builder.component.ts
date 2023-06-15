@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import * as L from 'leaflet';
 import { icon, Marker } from 'leaflet';
 import { mapLocationsData } from 'src/app/Data/mapLocationsData';
+import { CarModel } from 'src/app/Model/CarModel';
 import { AdditionalsModel } from 'src/app/Model/additionalsModel';
 import { mapLocations } from 'src/app/Model/mapLocations';
 import { OrderBuilderService } from 'src/app/services/order-builder.service';
@@ -25,11 +26,12 @@ export class OrderBuilderComponent {
   end? : Date;
   location : string = '';
   age : number = -1;
-
+  totalDays = -1;
   map?: L.Map
 
   additionalsArray: AdditionalsModel[] = [];
   selectedAdditionals : string = '';
+  vehicleArray : CarModel[] = [];
 
   contactForm: FormGroup = new FormGroup({});
 
@@ -47,11 +49,13 @@ export class OrderBuilderComponent {
       this.initializeMap();
     }, 0);
     this.getAdditionals();
+    this.getVehicles();
     this.contactForm = this._formBuilder.group({
       fullName: ['', [Validators.required]],
       phone: ['', [Validators.required]],
       email: ['', [Validators.required]],
     });
+    this.calculateTotalDays();
   }
 
   initializeMap(): void {
@@ -165,7 +169,25 @@ export class OrderBuilderComponent {
     }
     console.log(this.selectedAdditionals);
   }
-  
+
+  getVehicles() {
+    this.ob.getAllVehicles().subscribe({
+      next: (response: CarModel[]) => {
+        this.vehicleArray = response;
+      },
+      error: (error) => {
+        console.log('Error getting additionals', error);
+      }
+    });
+  }
+
+  calculateTotalDays() {
+    let timeDiff = 0;
+    if(this.start != undefined && this.end != undefined){
+      timeDiff = Math.abs(this.end.getTime() - this.start.getTime());
+    }
+    this.totalDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  }
 }
 
 

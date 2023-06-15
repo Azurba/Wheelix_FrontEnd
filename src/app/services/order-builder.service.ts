@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdditionalsModel } from 'src/app/Model/additionalsModel';
 import { Observable } from 'rxjs';
+import { CarModel } from '../Model/CarModel';
 
 @Injectable({
   providedIn: 'root'
@@ -38,9 +39,8 @@ export class OrderBuilderService {
   public getAllAdditionals() : Observable<AdditionalsModel[]>{
     return this.http.get<AdditionalsModel[]>("https://localhost:7220/api/Additional");
   }
-
-
-
-
-
+ 
+  public getAllVehicles() : Observable<CarModel[]>{
+    return this.http.get<CarModel[]>("https://localhost:7220/api/Car");
+  }
 }
