@@ -38,22 +38,33 @@
     </div>
   </mat-step>
   <mat-step>
-    <h1>Select your Vehicle</h1>
+    <h1 style="font-weight: bolder; font-size: 30px;">Select your Vehicle</h1>
   </mat-step>
   <mat-step>
-    <h1>Select any Additionals</h1>
+    <h1 style="font-weight: bolder; font-size: 30px;">Select the Additionals</h1>
     <div class="row d-flex justify-content-center">
-      <div class="col-6">       
-          <div *ngFor="let extra of additionalsArray" class="card border-primary mb-1" style="width: 50%;">
-            <div class="card-body">
-              <h2 class="card-title">{{extra.name}}</h2>
-              <p class="card-text">{{extra.description}}</p>
+      <div class="col-12">
+        <div class="row">
+          <div *ngFor="let extra of additionalsArray" class="col-md-4 mb-3">
+            <div class="card border-secondary h-100">
+              <div class="card-body">
+                <h2 *ngIf="extra.name == 'Wheelix Fuel' || extra.name == 'Protect the Car (LDW)'" class="card-title">{{extra.name}} - <span style="color: red;">Recommended</span></h2>
+                <h2 *ngIf="extra.name != 'Wheelix Fuel' && extra.name != 'Protect the Car (LDW)'" class="card-title">{{extra.name}}</h2>
+                <p class="card-text">{{extra.description}}</p>
+                <p class="card-text" style="font-weight: bold;">{{extra.price | currency}}</p>
+                <mat-slide-toggle color="primary" (change)="updateSelectedAdditionals(extra, $event.checked)"></mat-slide-toggle>
+              </div>
             </div>
           </div>
+        </div>
       </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button *ngIf="selectedAdditionals.length > 0" matStepperNext style="font-size: 30px;" type="button" class="btn btn-success">Next</button>
+      <button *ngIf="selectedAdditionals.length == 0" matStepperNext style="font-size: 20px;" type="button" class="btn btn-warning">Skip Additionals</button>
     </div>
   </mat-step>
   <mat-step>
-    <h1>Confirm your Order</h1>
+    <h1 style="font-weight: bolder; font-size: 30px;">Confirm your Order</h1>
   </mat-step>
 </mat-stepper>
