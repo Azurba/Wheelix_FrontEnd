@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import * as L from 'leaflet';
 import { icon, Marker } from 'leaflet';
 import { mapLocationsData } from 'src/app/Data/mapLocationsData';
+import { AdditionalsModel } from 'src/app/Model/additionalsModel';
 import { mapLocations } from 'src/app/Model/mapLocations';
 import { OrderBuilderService } from 'src/app/services/order-builder.service';
 
@@ -32,9 +33,10 @@ export class OrderBuilderComponent {
 
   map?: L.Map
 
+  additionalsArray: AdditionalsModel[] = [];
+
   constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData, private ob : OrderBuilderService, private _snackBar: MatSnackBar) {
     this.pointsOfInterest = mapLocations.pointsOfInterest;
-    console.log(this.pointsOfInterest);
   }
 
   ngOnInit() : void{
@@ -45,7 +47,7 @@ export class OrderBuilderComponent {
     setTimeout(() => {
       this.initializeMap();
     }, 0);
-    console.log(this.location);
+    this.getAdditionals();
   }
 
   initializeMap(): void {
@@ -126,5 +128,16 @@ export class OrderBuilderComponent {
         verticalPosition: 'bottom'
       });
     }
-  } 
+  }
+  
+  getAdditionals() {
+    this.ob.getAllAdditionals().subscribe({
+      next: (response: AdditionalsModel[]) => {
+        this.additionalsArray = response;
+      },
+      error: (error) => {
+        console.log('Error getting additionals', error);
+      }
+    });
+  }
 }

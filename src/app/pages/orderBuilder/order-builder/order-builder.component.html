@@ -42,6 +42,16 @@
   </mat-step>
   <mat-step>
     <h1>Select any Additionals</h1>
+    <div class="row d-flex justify-content-center">
+      <div class="col-6">       
+          <div *ngFor="let extra of additionalsArray" class="card border-primary mb-1" style="width: 50%;">
+            <div class="card-body">
+              <h2 class="card-title">{{extra.name}}</h2>
+              <p class="card-text">{{extra.description}}</p>
+            </div>
+          </div>
+      </div>
+    </div>
   </mat-step>
   <mat-step>
     <h1>Confirm your Order</h1>

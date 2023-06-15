@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdditionalsModel } from 'src/app/Model/additionalsModel';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +17,7 @@ export class OrderBuilderService {
   location : string = '';
   age : number = -1;
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private http : HttpClient) { }
 
   allow(){
     this.isAllowed = true;
@@ -31,4 +34,13 @@ export class OrderBuilderService {
     this.location = location;
     this.age = parseInt(age);
   }
+
+  public getAllAdditionals() : Observable<AdditionalsModel[]>{
+    return this.http.get<AdditionalsModel[]>("https://localhost:7220/api/Additional");
+  }
+
+
+
+
+
 }
