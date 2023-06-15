@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import * as L from 'leaflet';
 import { icon, Marker } from 'leaflet';
@@ -15,12 +15,7 @@ import { OrderBuilderService } from 'src/app/services/order-builder.service';
   styleUrls: ['./order-builder.component.scss']
 })
 export class OrderBuilderComponent {
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+
   isLinear = false;
 
   pointsOfInterest : mapLocations[] = [];
@@ -36,6 +31,9 @@ export class OrderBuilderComponent {
   additionalsArray: AdditionalsModel[] = [];
   selectedAdditionals : string = '';
 
+  contactForm: FormGroup = new FormGroup({});
+
+
   constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData, private ob : OrderBuilderService, private _snackBar: MatSnackBar) {
     this.pointsOfInterest = mapLocations.pointsOfInterest;
   }
@@ -49,6 +47,11 @@ export class OrderBuilderComponent {
       this.initializeMap();
     }, 0);
     this.getAdditionals();
+    this.contactForm = this._formBuilder.group({
+      fullName: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+    });
   }
 
   initializeMap(): void {
