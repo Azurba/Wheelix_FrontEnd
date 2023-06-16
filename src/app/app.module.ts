@@ -23,6 +23,7 @@ import { HomeService } from './services/home.service';
 import { FleetData } from './Data/FleetData';
 import { OrderBuilderComponent } from './pages/orderBuilder/order-builder/order-builder.component';
 import { mapLocationsData } from './Data/mapLocationsData';
+import { VehicleSectionComponent } from './pages/orderBuilder/vehicleSection/vehicle-section/vehicle-section.component';
 
 
 
@@ -31,7 +32,8 @@ import { mapLocationsData } from './Data/mapLocationsData';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    OrderBuilderComponent
+    OrderBuilderComponent,
+    VehicleSectionComponent
   ],
   imports: [
     BrowserModule,

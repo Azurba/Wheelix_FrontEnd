@@ -31,7 +31,6 @@ export class OrderBuilderComponent {
 
   additionalsArray: AdditionalsModel[] = [];
   selectedAdditionals : string = '';
-  vehicleArray : CarModel[] = [];
 
   contactForm: FormGroup = new FormGroup({});
 
@@ -49,13 +48,11 @@ export class OrderBuilderComponent {
       this.initializeMap();
     }, 0);
     this.getAdditionals();
-    this.getVehicles();
     this.contactForm = this._formBuilder.group({
       fullName: ['', [Validators.required]],
       phone: ['', [Validators.required]],
       email: ['', [Validators.required]],
     });
-    this.calculateTotalDays();
   }
 
   initializeMap(): void {
@@ -168,25 +165,6 @@ export class OrderBuilderComponent {
       this.selectedAdditionals = this.selectedAdditionals.replace(/^\s*,/, '');
     }
     console.log(this.selectedAdditionals);
-  }
-
-  getVehicles() {
-    this.ob.getAllVehicles().subscribe({
-      next: (response: CarModel[]) => {
-        this.vehicleArray = response;
-      },
-      error: (error) => {
-        console.log('Error getting additionals', error);
-      }
-    });
-  }
-
-  calculateTotalDays() {
-    let timeDiff = 0;
-    if(this.start != undefined && this.end != undefined){
-      timeDiff = Math.abs(this.end.getTime() - this.start.getTime());
-    }
-    this.totalDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
   }
 }
 
