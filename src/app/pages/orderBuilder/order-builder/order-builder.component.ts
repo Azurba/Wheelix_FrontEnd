@@ -29,8 +29,7 @@ export class OrderBuilderComponent {
   totalDays = -1;
   map?: L.Map
 
-  additionalsArray: AdditionalsModel[] = [];
-  selectedAdditionals : string = '';
+  
 
   contactForm: FormGroup = new FormGroup({});
 
@@ -47,7 +46,6 @@ export class OrderBuilderComponent {
     setTimeout(() => {
       this.initializeMap();
     }, 0);
-    this.getAdditionals();
     this.contactForm = this._formBuilder.group({
       fullName: ['', [Validators.required]],
       phone: ['', [Validators.required]],
@@ -134,46 +132,4 @@ export class OrderBuilderComponent {
       });
     }
   }
-  
-  getAdditionals() {
-    this.ob.getAllAdditionals().subscribe({
-      next: (response: AdditionalsModel[]) => {
-        this.additionalsArray = response;
-      },
-      error: (error) => {
-        console.log('Error getting additionals', error);
-      }
-    });
-  }
-
-  //Read what this method is doing at the end of this file
-  updateSelectedAdditionals(extra: AdditionalsModel, isChecked: boolean): void {
-    if (isChecked) {
-      // Append a comma to selectedAdditionals if there is already an item
-      if (this.selectedAdditionals.length > 0) {
-        this.selectedAdditionals += ', ';
-      }
-      //if no item is already there, just add it
-      this.selectedAdditionals += extra.name;
-    } else {
-      // Remove the name of the additional from selectedAdditionals
-      const regex = new RegExp(extra.name, 'gi');
-      this.selectedAdditionals = this.selectedAdditionals.replace(regex, '');
-      // Remove trailing commas and spaces
-      this.selectedAdditionals = this.selectedAdditionals.replace(/,\s*,/g, ',');
-      this.selectedAdditionals = this.selectedAdditionals.replace(/,\s*$/, '');
-      this.selectedAdditionals = this.selectedAdditionals.replace(/^\s*,/, '');
-    }
-    console.log(this.selectedAdditionals);
-  }
 }
-
-
-/*
-const regex = new RegExp(extra.name, 'gi');
-this.selectedAdditionals = this.selectedAdditionals.replace(regex, '');
-
-In this part, we create a regular expression using new RegExp() to match the name of the additional (extra.name) 
-globally and case-insensitively ('gi' flags). We use this regular expression to replace all occurrences of the 
-additional's name in the selectedAdditionals string with an empty string, effectively removing it.
-*/

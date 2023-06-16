@@ -24,6 +24,7 @@ import { FleetData } from './Data/FleetData';
 import { OrderBuilderComponent } from './pages/orderBuilder/order-builder/order-builder.component';
 import { mapLocationsData } from './Data/mapLocationsData';
 import { VehicleSectionComponent } from './pages/orderBuilder/vehicleSection/vehicle-section/vehicle-section.component';
+import { AdditionalsSectionComponent } from './pages/orderBuilder/additionalsSection/additionals-section/additionals-section.component';
 
 
 
@@ -33,7 +34,8 @@ import { VehicleSectionComponent } from './pages/orderBuilder/vehicleSection/veh
     NavbarComponent,
     HomeComponent,
     OrderBuilderComponent,
-    VehicleSectionComponent
+    VehicleSectionComponent,
+    AdditionalsSectionComponent
   ],
   imports: [
     BrowserModule,
