@@ -44,37 +44,6 @@
     <app-additionals-section></app-additionals-section>
   </mat-step>
   <mat-step>
-    <h1 style="font-weight: bolder; font-size: 30px;">Confirm your Order</h1>
-    <div class="container-fluid" style="width: 90%;">
-      <div class="row">
-        <div class="col-6">
-          <div class="text-center">
-            <h1 style="font-weight: bolder;">Rental Details</h1>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="text-center">
-            <h1 style="font-weight: bolder;">Contact Information</h1>
-          </div>
-            <form [formGroup]="contactForm" action="">
-              <div class="row">
-                <div class="col-12">
-                  <label for="fullname" class="text text-left" style="margin-bottom: 10px; font-size: 20px;">Full Name:</label>
-                  <input class="form-control" type="text" placeholder="" name="fullName" formControlName="fullName" style="margin-bottom: 20px;">
-                </div>
-                <div class="col-12">
-                  <label for="phone" class="text text-left" style="margin-bottom: 10px; font-size: 20px;">Phone Number (with area code):</label>
-                  <input type="text" placeholder="" name="phone" class="form-control" formControlName="phone" style="margin-bottom: 20px;">
-                </div>
-                <div class="col-12">
-                  <label for="email" class="text text-left" style="margin-bottom: 10px;font-size: 20px;">Email Address:</label>
-                  <input type="text" placeholder="" name="email" class="form-control" formControlName="email" style="margin-bottom: 20px;">
-                </div>
-              </div>
-            </form>            
-        </div>
-        <button type="button" class="btn btn-success" style="font-size: 20px;">Confirm</button>
-      </div>
-    </div>
+    <app-confirm-section></app-confirm-section>
   </mat-step>
 </mat-stepper>

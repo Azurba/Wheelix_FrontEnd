@@ -29,11 +29,6 @@ export class OrderBuilderComponent {
   totalDays = -1;
   map?: L.Map
 
-  
-
-  contactForm: FormGroup = new FormGroup({});
-
-
   constructor(private _formBuilder: FormBuilder, mapLocations : mapLocationsData, private ob : OrderBuilderService, private _snackBar: MatSnackBar) {
     this.pointsOfInterest = mapLocations.pointsOfInterest;
   }
@@ -46,11 +41,6 @@ export class OrderBuilderComponent {
     setTimeout(() => {
       this.initializeMap();
     }, 0);
-    this.contactForm = this._formBuilder.group({
-      fullName: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-    });
   }
 
   initializeMap(): void {
