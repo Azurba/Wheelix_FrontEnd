@@ -26,6 +26,7 @@ import { mapLocationsData } from './Data/mapLocationsData';
 import { VehicleSectionComponent } from './pages/orderBuilder/vehicleSection/vehicle-section/vehicle-section.component';
 import { AdditionalsSectionComponent } from './pages/orderBuilder/additionalsSection/additionals-section/additionals-section.component';
 import { ConfirmSectionComponent } from './pages/orderBuilder/confirm-section/confirm-section.component';
+import { MapSectionComponent } from './pages/orderBuilder/map-section/map-section.component';
 
 
 
@@ -37,7 +38,8 @@ import { ConfirmSectionComponent } from './pages/orderBuilder/confirm-section/co
     OrderBuilderComponent,
     VehicleSectionComponent,
     AdditionalsSectionComponent,
-    ConfirmSectionComponent
+    ConfirmSectionComponent,
+    MapSectionComponent
   ],
   imports: [
     BrowserModule,
