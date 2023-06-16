@@ -18,11 +18,7 @@ export class MapSectionComponent {
   pointsOfInterest : mapLocations[] = [];
   closestLocations: mapLocations[] = [];
 
-  start? : Date;
-  end? : Date;
   location : string = '';
-  age : number = -1;
-  totalDays = -1;
   map?: L.Map
 
   constructor(mapLocations : mapLocationsData, private ob : OrderBuilderService, private _snackBar: MatSnackBar) {
@@ -30,8 +26,6 @@ export class MapSectionComponent {
   }
 
   ngOnInit() : void{
-    this.start = this.ob.start;
-    this.end = this.ob.end;
     this.location = this.ob.location;
     this.findMatches(this.location);
     setTimeout(() => {
@@ -40,7 +34,6 @@ export class MapSectionComponent {
   }
 
   initializeMap(): void {
-    // const map = L.map('map').setView([39.658775, -98.333763], 13);
     this.map = L.map('map');
     const usaBounds = L.latLngBounds([[49.384358, -125.000000], [24.396308, -66.934570]]);
     this.map.fitBounds(usaBounds);
@@ -103,7 +96,6 @@ export class MapSectionComponent {
   }
   
   findMatches(city: string): void {
-    console.log(city);
     const formattedLocation = this.location.toLowerCase().replace(/^(.)(.*)$/, (_, firstChar, rest) => firstChar.toUpperCase() + rest.toLowerCase());
     this.closestLocations = this.pointsOfInterest.filter(poi => {
       const formattedAddress = poi.address.toLowerCase();
@@ -118,5 +110,4 @@ export class MapSectionComponent {
       });
     }
   }
-
 }
