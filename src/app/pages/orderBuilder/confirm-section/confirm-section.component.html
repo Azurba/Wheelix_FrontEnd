@@ -9,10 +9,13 @@
               <div class="card-body">
                 <h1 class="card-title">{{ob.carName}} or similar</h1>
                 <p class="card-text"><span style="font-weight: bolder;">Pick-up location: </span>{{ob.locationName}} - {{ob.locationAddress}}</p>
-                <p class="card-text"><span style="font-weight: bolder;">From: </span>{{ob.startDate}}</p>
-                <p class="card-text"><span style="font-weight: bolder;">To: </span>{{ob.endDate}}</p>
+                <mat-divider></mat-divider>
+                <p class="card-text"><span style="font-weight: bolder;">From: </span>{{ob.formattedStartDate}}</p>
+                <p class="card-text"><span style="font-weight: bolder;">To: </span>{{ob.formattedEndDate}}</p>
+                <mat-divider></mat-divider>
                 <p class="card-text"><span style="font-weight: bolder;">Additionals: </span>{{ob.additionals}}</p>
-                <p class="card-text"><span style="font-weight: bolder;">Total: </span>{{ob.total}}</p>
+                <mat-divider></mat-divider>
+                <h2 class="card-text"><span style="font-weight: bolder;">Total: </span>{{grandTotal}}</h2>
               </div>
             </div>
           </div>

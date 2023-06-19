@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AdditionalsModel } from 'src/app/Model/additionalsModel';
 import { Observable } from 'rxjs';
 import { CarModel } from '../Model/CarModel';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class OrderBuilderService {
   //This property wil be set to true if the user has fullfilled the date, location and age
   //correctly in the home component
   private isAllowed = true;
+
   start? : Date;
   end? : Date;
   location : string = '';
@@ -30,8 +32,11 @@ export class OrderBuilderService {
   endDate? : Date;
   total? : number;
   payment? : string;
+  formattedStartDate: string | undefined;
+  formattedEndDate: string | undefined;
+  additionalsArray: AdditionalsModel[] = [];
 
-  constructor(private router : Router, private http : HttpClient) { }
+  constructor(private router : Router, private http : HttpClient, private datePipe : DatePipe) { }
 
   allow(){
     this.isAllowed = true;
@@ -42,12 +47,27 @@ export class OrderBuilderService {
     return this.isAllowed;
   }
 
-  setUpInitialData(start : Date, end : Date, location : string, age : string){
+  setUpInitialData(start: Date, end: Date, location: string, age: string) {
     this.startDate = start;
     this.endDate = end;
+    // Format the dates as strings
+    const formattedStart = this.datePipe.transform(start, 'EEEE, MMM d yyyy');
+    const formattedEnd = this.datePipe.transform(end, 'EEEE, MMM d yyyy');
+
+    this.formattedStartDate = formattedStart !== null ? formattedStart : undefined;
+    this.formattedEndDate = formattedEnd !== null ? formattedEnd : undefined;
+
     this.location = location;
     this.age = parseInt(age);
   }
+  
+
+  // setUpInitialData(start : Date, end : Date, location : string, age : string){
+  //   this.startDate = start;
+  //   this.endDate = end;
+  //   this.location = location;
+  //   this.age = parseInt(age);
+  // }
 
   buildRentalObject(){
     console.log("test");

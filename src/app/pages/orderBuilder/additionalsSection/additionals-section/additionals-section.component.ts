@@ -24,6 +24,7 @@ export class AdditionalsSectionComponent {
     this.ob.getAllAdditionals().subscribe({
       next: (response: AdditionalsModel[]) => {
         this.additionalsArray = response;
+        this.ob.additionalsArray = response;
       },
       error: (error) => {
         console.log('Error getting additionals', error);

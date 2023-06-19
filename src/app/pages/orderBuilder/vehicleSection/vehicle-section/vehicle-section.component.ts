@@ -33,11 +33,9 @@ export class VehicleSectionComponent {
   }
 
   calculateTotalDays() {
-    console.log(this.ob.start);
-    console.log(this.ob.end);
     let timeDiff = 0;
-    if(this.ob.start != undefined && this.ob.end != undefined){
-      timeDiff = Math.abs(this.ob.end.getTime() - this.ob.start.getTime());
+    if(this.ob.startDate != undefined && this.ob.endDate != undefined){
+      timeDiff = Math.abs(this.ob.endDate.getTime() - this.ob.startDate.getTime());
     }
     this.totalDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
     console.log(this.totalDays);
