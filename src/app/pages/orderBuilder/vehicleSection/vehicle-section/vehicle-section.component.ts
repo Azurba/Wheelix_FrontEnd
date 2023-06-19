@@ -11,14 +11,13 @@ export class VehicleSectionComponent {
 
   vehicleArray : CarModel[] = [];
 
-  start? : Date;
-  end? : Date;
-  totalDays = -1;
+  totalDays : number = 1;
 
   constructor(private ob : OrderBuilderService) {
   }
 
   ngOnInit() : void{
+    this.calculateTotalDays();
     this.getVehicles();
   }
 
@@ -34,10 +33,23 @@ export class VehicleSectionComponent {
   }
 
   calculateTotalDays() {
+    console.log(this.ob.start);
+    console.log(this.ob.end);
     let timeDiff = 0;
-    if(this.start != undefined && this.end != undefined){
-      timeDiff = Math.abs(this.end.getTime() - this.start.getTime());
+    if(this.ob.start != undefined && this.ob.end != undefined){
+      timeDiff = Math.abs(this.ob.end.getTime() - this.ob.start.getTime());
     }
     this.totalDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    console.log(this.totalDays);
+  }
+
+  selectedVehicle(carType : string, manufacturer : string, model : string, price : number){
+    this.ob.carName = manufacturer + " " + model;
+    this.ob.carType = carType;
+    this.ob.total = price * this.totalDays;
+    console.log(this.ob.carName);
+    console.log(this.ob.carType);
+    console.log(this.ob.total);
+
   }
 }

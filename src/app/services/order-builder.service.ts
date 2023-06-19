@@ -18,6 +18,18 @@ export class OrderBuilderService {
   location : string = '';
   age : number = -1;
 
+  //Used to build the rental object
+  locationName?: string;
+  locationAddress?: string;
+  carName? : string;
+  carType? : string;
+  driverName? : string;
+  additionals? : string;
+  startDate? : Date;
+  endDate? : Date;
+  total? : number;
+  payment? : string;
+
   constructor(private router : Router, private http : HttpClient) { }
 
   allow(){
@@ -34,6 +46,10 @@ export class OrderBuilderService {
     this.end = end;
     this.location = location;
     this.age = parseInt(age);
+  }
+
+  buildRentalObject(){
+    console.log("test");
   }
 
   public getAllAdditionals() : Observable<AdditionalsModel[]>{

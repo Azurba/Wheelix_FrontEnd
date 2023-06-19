@@ -76,7 +76,7 @@
                 </div>
                 <h2>{{car.price | currency}} <span style="color: gray; font-size: 16px;">per day</span></h2>
                 <h2>{{car.price * totalDays | currency}} <span style="color: gray; font-size: 16px;">total</span></h2>
-                <button id="selectBtn" type="button" class="btn btn-success w-100">Select</button>
+                <button id="selectBtn" type="button" class="btn btn-success w-100" (click)="selectedVehicle(car.type, car.manufacturer, car.model, car.price)">Select</button>
               </div>
             </div>
           </div>

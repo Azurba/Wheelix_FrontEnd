@@ -90,6 +90,10 @@ export class MapSectionComponent {
   }
 
   selectLocation(selectedCoordinates : L.LatLngExpression, selectedName : string, selectedAddress : string): void {
+    this.ob.locationName = selectedName;
+    this.ob.locationAddress = selectedAddress;
+    console.log(this.ob.locationName);
+    console.log(this.ob.locationAddress);
     // console.log(selectedCoordinates)
     // console.log(selectedName)
     // console.log(selectedAddress)
