@@ -43,13 +43,13 @@ export class VehicleSectionComponent {
     console.log(this.totalDays);
   }
 
-  selectedVehicle(carType : string, manufacturer : string, model : string, price : number){
+  selectedVehicle(carType : string, manufacturer : string, model : string, price : number, img : string){
     this.ob.carName = manufacturer + " " + model;
     this.ob.carType = carType;
     this.ob.total = price * this.totalDays;
+    this.ob.carImg = img;
     console.log(this.ob.carName);
     console.log(this.ob.carType);
     console.log(this.ob.total);
-
   }
 }

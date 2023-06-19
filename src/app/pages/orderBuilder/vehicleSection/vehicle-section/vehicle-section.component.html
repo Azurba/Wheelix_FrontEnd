@@ -55,8 +55,8 @@
       <div class="col-9">
         <div class="row">
           <div *ngFor="let car of vehicleArray" class="col-md-4">
-            <div class="card border-secondary mb-3" style="width: 100%; margin-left: 25px; margin-bottom: 20px; text-align: center;">
-              <img class="card-img-top" src="{{car.image}}" alt="Card image cap" style="width: 60%; height: 192px;">
+            <div class="card border-secondary mb-3 mx-auto" style="width: 100%; margin-left: 25px; margin-bottom: 20px; text-align: center;">
+              <img class="card-img-top" src="{{car.image}}" alt="Card image cap" style="width: 75%; height: 230px;">
               <div class="card-body">
                 <h1 class="card-title">{{car.type}}</h1>
                 <h4 style="color: gray;" class="card-title">{{car.manufacturer}} {{car.model}} or similar</h4>
@@ -76,7 +76,7 @@
                 </div>
                 <h2>{{car.price | currency}} <span style="color: gray; font-size: 16px;">per day</span></h2>
                 <h2>{{car.price * totalDays | currency}} <span style="color: gray; font-size: 16px;">total</span></h2>
-                <button id="selectBtn" type="button" class="btn btn-success w-100" (click)="selectedVehicle(car.type, car.manufacturer, car.model, car.price)">Select</button>
+                <button matStepperNext id="selectBtn" type="button" class="btn btn-success w-100" (click)="selectedVehicle(car.type, car.manufacturer, car.model, car.price, car.image)">Select</button>
               </div>
             </div>
           </div>

@@ -23,6 +23,7 @@ export class OrderBuilderService {
   locationAddress?: string;
   carName? : string;
   carType? : string;
+  carImg? : string;
   driverName? : string;
   additionals? : string;
   startDate? : Date;
@@ -42,8 +43,8 @@ export class OrderBuilderService {
   }
 
   setUpInitialData(start : Date, end : Date, location : string, age : string){
-    this.start = start;
-    this.end = end;
+    this.startDate = start;
+    this.endDate = end;
     this.location = location;
     this.age = parseInt(age);
   }

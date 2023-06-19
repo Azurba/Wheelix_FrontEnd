@@ -49,7 +49,7 @@ export class AdditionalsSectionComponent {
         this.selectedAdditionals = this.selectedAdditionals.replace(/,\s*$/, '');
         this.selectedAdditionals = this.selectedAdditionals.replace(/^\s*,/, '');
       }
-      console.log(this.selectedAdditionals);
+      this.ob.additionals = this.selectedAdditionals;
     }
   }
 
