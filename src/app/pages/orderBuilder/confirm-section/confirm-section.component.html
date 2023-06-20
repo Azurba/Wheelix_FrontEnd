@@ -6,7 +6,7 @@
             <h1 style="font-weight: bolder;">Rental Details</h1>
             <div class="card mx-auto" style="width: 18rem;">
               <img class="card-img-top" src="{{ob.carImg}}" alt="Card image cap">
-              <div class="card-body">
+             <div class="card-body">
                 <h1 class="card-title">{{ob.carName}} or similar</h1>
                 <p class="card-text"><span style="font-weight: bolder;">Pick-up location: </span>{{ob.locationName}} - {{ob.locationAddress}}</p>
                 <mat-divider></mat-divider>
@@ -18,7 +18,7 @@
                 <h2 class="card-text"><span style="font-weight: bolder;">Total: </span>{{ob.total}}</h2>
               </div>
             </div>
-          </div>
+          </div> 
         </div>
         <div class="col-6">
           <div class="text-center">
@@ -39,8 +39,59 @@
                 <input type="text" placeholder="" name="email" class="form-control" formControlName="email" style="margin-bottom: 20px;">
               </div>
             </div>
-          </form>         
+          </form>    
         </div>
+        <!-- <div class="form-check" style="margin-bottom: 20px;">
+          <mat-checkbox class="example-margin" [(ngModel)]="driverAcknowledged"> I acknowledge that the driver is older than 20 years old and it is the same person as the one registered in the form above.</mat-checkbox>
+        </div>
+        <div class="form-check" style="margin-bottom: 20px;">
+          <mat-checkbox class="example-margin" [(ngModel)]="paymentAcknowledged"> I understand that I need to pay the full amount, on the day of pick-up, before taking the car.</mat-checkbox>
+        </div>
+        <div class="form-check" style="margin-bottom: 20px;">
+          <mat-checkbox class="example-margin" [(ngModel)]="licenseAcknowledged"> I understand that I need to bring a valid driver license with the same name registered in the form above before taking the car.</mat-checkbox>
+        </div>   -->
         <button type="button" class="btn btn-success" style="font-size: 20px;" [disabled]="!contactForm.valid" (click)="confirmOrder()">Confirm</button>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-backdrop" *ngIf="isModalOpen">
+      <div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': isModalOpen}" style="display: block;">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="col-12">
+                <h1>Thank you! We have received your rental order. A receipt was sent to your email!</h1>
+                <h2>Please, read this carefully!</h2>
+                <p>You are required to bring a <span style="font-weight: bolder;">valid</span> driver license with the name 
+                  <span style="font-weight: bolder;">{{ob.driverName}}</span> registered on it when picking up your rental 
+                  car as well as paying the full amount of <span style="font-weight: bolder;">{{ob.total}}</span> before being able to 
+                  take the car. 
+                </p>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="text-center">
+                <h1 style="font-weight: bolder;">Rental Details</h1>
+                <div class="card mx-auto" style="width: 18rem;">
+                  <img class="card-img-top" src="{{ob.carImg}}" alt="Card image cap">
+                 <div class="card-body">
+                    <h1 class="card-title">{{ob.carName}} or similar</h1>
+                    <p class="card-text"><span style="font-weight: bolder;">Pick-up location: </span>{{ob.locationName}} - {{ob.locationAddress}}</p>
+                    <mat-divider></mat-divider>
+                    <p class="card-text"><span style="font-weight: bolder;">From: </span>{{ob.formattedStartDate}}</p>
+                    <p class="card-text"><span style="font-weight: bolder;">To: </span>{{ob.formattedEndDate}}</p>
+                    <mat-divider></mat-divider>
+                    <p class="card-text"><span style="font-weight: bolder;">Additionals: </span>{{ob.additionals}}</p>
+                    <mat-divider></mat-divider>
+                    <h2 class="card-text"><span style="font-weight: bolder;">Total: </span>{{ob.total}}</h2>
+                  </div>
+                </div>
+              </div> 
+              <button type="button" class="btn btn-success" style="margin-right: 20px;" (click)="printOrder()">Print</button>
+              <button type="button" class="btn btn-danger" (click)="closeModal()">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>

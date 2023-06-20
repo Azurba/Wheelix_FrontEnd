@@ -13,7 +13,13 @@ export class ConfirmSectionComponent {
   contactForm: FormGroup = new FormGroup({});
   ob : OrderBuilderService;
   grandTotal? : number;
+  isModalOpen : boolean = false;
   
+  driverAcknowledged : boolean = false;
+  paymentAcknowledged : boolean = false;
+  licenseAcknowledged : boolean = false;
+
+
   constructor(private _formBuilder: FormBuilder, private ob_ : OrderBuilderService) {
     this.ob = ob_;
   }
@@ -26,7 +32,6 @@ export class ConfirmSectionComponent {
     });
   }
 
-
   confirmOrder(){
     if (this.contactForm.valid) {
       const fullName = this.contactForm.get('fullName')?.value;
@@ -38,9 +43,20 @@ export class ConfirmSectionComponent {
       this.ob.driverPhone = phone;
       this.ob.driverEmail = email;
 
-      // Proceed with the order confirmation logic
       this.ob.submitRentalOrder();
+      this.openModal();
     }
-    
+  }
+
+  printOrder(){
+    window.print();
+  }
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
   }
 }

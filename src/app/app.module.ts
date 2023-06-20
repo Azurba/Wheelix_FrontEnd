@@ -14,6 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDividerModule} from '@angular/material/divider';
 import { DatePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,7 +59,8 @@ import { MapSectionComponent } from './pages/orderBuilder/map-section/map-sectio
     MatSidenavModule,
     MatSlideToggleModule,
     MatDividerModule,
-    DatePipe
+    DatePipe,
+    FormsModule
   ],
   providers: [FaqData, HomeService, FleetData, mapLocationsData, DatePipe],
   bootstrap: [AppComponent]

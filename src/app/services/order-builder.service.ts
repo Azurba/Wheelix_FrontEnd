@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { CarModel } from '../Model/CarModel';
 import { DatePipe } from '@angular/common';
 import { RentalOrder } from '../Model/RentalOrder';
+import { ConfirmSectionComponent } from '../pages/orderBuilder/confirm-section/confirm-section.component';
 
 @Injectable({
   providedIn: 'root'
