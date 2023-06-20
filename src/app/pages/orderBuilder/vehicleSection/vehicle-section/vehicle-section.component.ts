@@ -38,7 +38,7 @@ export class VehicleSectionComponent {
       timeDiff = Math.abs(this.ob.endDate.getTime() - this.ob.startDate.getTime());
     }
     this.totalDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    console.log(this.totalDays);
+    //console.log(this.totalDays);
   }
 
   selectedVehicle(carType : string, manufacturer : string, model : string, price : number, img : string){
@@ -46,8 +46,8 @@ export class VehicleSectionComponent {
     this.ob.carType = carType;
     this.ob.total = price * this.totalDays;
     this.ob.carImg = img;
-    console.log(this.ob.carName);
-    console.log(this.ob.carType);
-    console.log(this.ob.total);
+    // console.log(this.ob.carName);
+    // console.log(this.ob.carType);
+    // console.log(this.ob.total);
   }
 }

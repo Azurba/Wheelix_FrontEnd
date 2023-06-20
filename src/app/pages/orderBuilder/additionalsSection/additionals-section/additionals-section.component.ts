@@ -57,12 +57,12 @@ export class AdditionalsSectionComponent {
     getGrandTotal(){
       if (this.ob.additionals) {
         const items = this.ob.additionals.split(',').map(item => item.trim());
-        console.log(items);
+        //console.log(items);
         
         let totalPrice = 0;
         
         for (const item of items) {
-          console.log(item);
+          //console.log(item);
           
           const additional = this.ob.additionalsArray.find(a => a.name === item);
           
