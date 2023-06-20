@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { mapLocationsData } from 'src/app/Data/mapLocationsData';
 import { mapLocations } from 'src/app/Model/mapLocations';
 import * as L from 'leaflet';
 import { icon, Marker } from 'leaflet';
 import { OrderBuilderService } from 'src/app/services/order-builder.service';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-map-section',
@@ -20,6 +21,8 @@ export class MapSectionComponent {
 
   location : string = '';
   map?: L.Map
+
+  @ViewChild('stepper') stepper!: MatStepper;
 
   constructor(mapLocations : mapLocationsData, private ob : OrderBuilderService, private _snackBar: MatSnackBar) {
     this.pointsOfInterest = mapLocations.pointsOfInterest;
@@ -89,11 +92,10 @@ export class MapSectionComponent {
     }
   }
 
-  selectLocation(selectedCoordinates : L.LatLngExpression, selectedName : string, selectedAddress : string): void {
+  selectLocation(selectedCoordinates : L.LatLngExpression, selectedName : string, selectedAddress : string, stepper : MatStepper): void {
     this.ob.locationName = selectedName;
     this.ob.locationAddress = selectedAddress;
-    console.log(this.ob.locationName);
-    console.log(this.ob.locationAddress);
+    stepper.next();
     // console.log(selectedCoordinates)
     // console.log(selectedName)
     // console.log(selectedAddress)

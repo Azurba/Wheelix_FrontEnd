@@ -51,6 +51,29 @@ export class AdditionalsSectionComponent {
         this.selectedAdditionals = this.selectedAdditionals.replace(/^\s*,/, '');
       }
       this.ob.additionals = this.selectedAdditionals;
+      this.getGrandTotal()
+    }
+
+    getGrandTotal(){
+      if (this.ob.additionals) {
+        const items = this.ob.additionals.split(',').map(item => item.trim());
+        console.log(items);
+        
+        let totalPrice = 0;
+        
+        for (const item of items) {
+          console.log(item);
+          
+          const additional = this.ob.additionalsArray.find(a => a.name === item);
+          
+          if (additional) {
+            totalPrice += additional.price;
+          }
+        }
+        if(this.ob.total != undefined){
+          this.ob.total = this.ob.total + totalPrice;
+        }
+      }
     }
   }
 

@@ -14,8 +14,8 @@ export class ConfirmSectionComponent {
   ob : OrderBuilderService;
   grandTotal? : number;
   
-  constructor(private _formBuilder: FormBuilder, ob : OrderBuilderService) {
-    this.ob = ob;
+  constructor(private _formBuilder: FormBuilder, private ob_ : OrderBuilderService) {
+    this.ob = ob_;
   }
 
   ngOnInit() : void{
@@ -24,5 +24,13 @@ export class ConfirmSectionComponent {
       phone: ['', [Validators.required]],
       email: ['', [Validators.required]],
     });
+  }
+
+
+  confirmOrder(){
+    // console.log(this.ob.additionalsArray);
+    // console.log(this.ob.total)
+    //console.log(this.ob.additionals);
+    
   }
 }

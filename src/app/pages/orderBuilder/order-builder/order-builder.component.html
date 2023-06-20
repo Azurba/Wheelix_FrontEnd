@@ -1,14 +1,14 @@
-<mat-stepper #stepper>
-  <mat-step>
+<mat-stepper #stepper [linear]="true">
+  <mat-step [editable]="false">
     <app-map-section></app-map-section>
   </mat-step>
-  <mat-step>
+  <mat-step [editable]="false">
     <app-vehicle-section></app-vehicle-section>
   </mat-step>
-  <mat-step>
+  <mat-step [editable]="false">
     <app-additionals-section></app-additionals-section>
   </mat-step>
-  <mat-step>
+  <mat-step [editable]="false">
     <app-confirm-section></app-confirm-section>
   </mat-step>
 </mat-stepper>
