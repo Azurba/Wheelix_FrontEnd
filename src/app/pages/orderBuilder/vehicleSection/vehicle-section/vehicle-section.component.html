@@ -53,10 +53,12 @@
         </mat-sidenav-container>
       </div>
       <div class="col-9">
-        <div class="row">
+        <div class="row justify-content-center">
           <div *ngFor="let car of vehicleArray" class="col-md-4">
             <div class="card border-secondary mb-3 mx-auto" style="width: 100%; margin-left: 25px; margin-bottom: 20px; text-align: center;">
-              <img class="card-img-top" src="{{car.image}}" alt="Card image cap" style="width: 75%; height: 230px;">
+              <div class="d-flex justify-content-center"> 
+                <img class="card-img-top" src="{{car.image}}" alt="Card image cap" style="width: 75%; height: 230px;">
+              </div>
               <div class="card-body">
                 <h1 class="card-title">{{car.type}}</h1>
                 <h4 style="color: gray;" class="card-title">{{car.manufacturer}} {{car.model}} or similar</h4>
