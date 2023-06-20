@@ -32,16 +32,14 @@ export class ConfirmSectionComponent {
       const fullName = this.contactForm.get('fullName')?.value;
       const phone = this.contactForm.get('phone')?.value;
       const email = this.contactForm.get('email')?.value;
-      console.log(fullName)
-      console.log(phone)
-      console.log(email)
       // Store the form values in your desired location
       // For example, you can set them in the OrderBuilderService
-      // this.ob.fullName = fullName;
-      // this.ob.phone = phone;
-      // this.ob.email = email;
+      this.ob.driverName = fullName;
+      this.ob.driverPhone = phone;
+      this.ob.driverEmail = email;
 
       // Proceed with the order confirmation logic
+      this.ob.submitRentalOrder();
     }
     
   }

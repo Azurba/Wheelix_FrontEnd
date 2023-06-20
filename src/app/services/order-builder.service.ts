@@ -5,6 +5,7 @@ import { AdditionalsModel } from 'src/app/Model/additionalsModel';
 import { Observable } from 'rxjs';
 import { CarModel } from '../Model/CarModel';
 import { DatePipe } from '@angular/common';
+import { RentalOrder } from '../Model/RentalOrder';
 
 @Injectable({
   providedIn: 'root'
@@ -27,11 +28,15 @@ export class OrderBuilderService {
   carType? : string;
   carImg? : string;
   driverName? : string;
+  driverPhone? : string;
+  driverEmail? : string;
   additionals? : string;
   startDate? : Date;
   endDate? : Date;
   total? : number;
-  payment? : string;
+  payment : string = 'Not payed yet';
+  trackingCode? : string;
+
   formattedStartDate: string | undefined;
   formattedEndDate: string | undefined;
   additionalsArray: AdditionalsModel[] = [];
@@ -69,8 +74,16 @@ export class OrderBuilderService {
   //   this.age = parseInt(age);
   // }
 
-  buildRentalObject(){
-    console.log("test");
+  generateTrackingCode(){
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let code = '';
+    
+    for (let i = 0; i < 5; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      code += characters[randomIndex];
+    }
+    
+    this.trackingCode = code;
   }
 
   public getAllAdditionals() : Observable<AdditionalsModel[]>{
@@ -80,4 +93,37 @@ export class OrderBuilderService {
   public getAllVehicles() : Observable<CarModel[]>{
     return this.http.get<CarModel[]>("https://localhost:7220/api/Car");
   }
+
+  public submitRentalOrder(){
+    this.generateTrackingCode();
+    const rentalData = {
+      id: 0,
+      trackingCode: this.trackingCode,
+      locationName: this.locationName,
+      locationAddress: this.locationAddress,
+      carName: this.carName,
+      carType: this.carType,
+      driverName: this.driverName,
+      driverPhone: this.driverPhone,
+      driverEmail: this.driverEmail,
+      additionals: this.additionals,
+      startDate: this.startDate,
+      endDate: this.endDate,
+      totalCost: this.total,
+      payment: this.payment
+    }
+
+    this.http.post('https://localhost:7220/api/Rental', rentalData)
+      .subscribe({
+        next: (response) => {
+          // Handle success response
+          console.log('Rental order submitted successfully:', response);
+        },
+        error: (error) => {
+          // Handle error response
+          console.error('Failed to submit rental order:', error);
+        }
+      });
+  }
+  
 }
