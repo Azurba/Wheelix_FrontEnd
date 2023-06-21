@@ -29,6 +29,7 @@ import { VehicleSectionComponent } from './pages/orderBuilder/vehicleSection/veh
 import { AdditionalsSectionComponent } from './pages/orderBuilder/additionalsSection/additionals-section/additionals-section.component';
 import { ConfirmSectionComponent } from './pages/orderBuilder/confirm-section/confirm-section.component';
 import { MapSectionComponent } from './pages/orderBuilder/map-section/map-section.component';
+import { RentalDetailsComponent } from './pages/rentalDetails/rental-details/rental-details.component';
 
 
 
@@ -41,7 +42,8 @@ import { MapSectionComponent } from './pages/orderBuilder/map-section/map-sectio
     VehicleSectionComponent,
     AdditionalsSectionComponent,
     ConfirmSectionComponent,
-    MapSectionComponent
+    MapSectionComponent,
+    RentalDetailsComponent
   ],
   imports: [
     BrowserModule,
