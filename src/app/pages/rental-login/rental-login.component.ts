@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RentalDetailsService } from 'src/app/services/rental-details.service';
 
 @Component({
   selector: 'app-rental-login',
@@ -10,7 +12,7 @@ export class RentalLoginComponent {
 
   loginForm! : FormGroup;
 
-  constructor(private formBuilder: FormBuilder){}
+  constructor(private formBuilder: FormBuilder, private rd : RentalDetailsService, router : Router){}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -19,13 +21,21 @@ export class RentalLoginComponent {
     });
   }
 
-  login(){
-    if(this.loginForm){
+  loginOnClick() {
+    if (this.loginForm) {
       const rentalCode = this.loginForm.get('rentalCode')?.value;
       const email = this.loginForm.get('email')?.value;
-      console.log('Rental Code:', rentalCode);
-      console.log('Email:', email);
+      console.log("component:", rentalCode, email);
+      this.rd.login(rentalCode, email).subscribe({
+        next: (response: string) => {
+          // Handle the successful login case
+          console.log("Login successful");
+        },
+        error: (error: any) => {
+          // Handle the error case
+          console.log("Login error:", error);
+        }
+      });
     }
   }
-
 }
