@@ -1,13 +1,13 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { RentalDetailsService } from '../services/rental-details.service';
+import { LoginService } from '../services/login.service';
 
 export const loginGuard: CanActivateFn = () => {
-  const service = inject(RentalDetailsService);
+  const service = inject(LoginService);
   const router = inject(Router);
 
   if(service.isAuthenticated() == true){
-    router.navigateByUrl('/rentalDetails')
     return true;
   }else{
     router.navigateByUrl('/rentalLogin')

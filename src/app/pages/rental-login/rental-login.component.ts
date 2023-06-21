@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 import { RentalDetailsService } from 'src/app/services/rental-details.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class RentalLoginComponent {
 
   loginForm! : FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private rd : RentalDetailsService, router : Router){}
+  constructor(private formBuilder: FormBuilder, private rd : RentalDetailsService, private guard : LoginService , ){}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -30,6 +31,7 @@ export class RentalLoginComponent {
         next: (response: string) => {
           // Handle the successful login case
           console.log("Login successful");
+          this.guard.login();
         },
         error: (error: any) => {
           // Handle the error case

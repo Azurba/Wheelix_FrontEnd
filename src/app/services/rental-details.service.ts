@@ -7,9 +7,6 @@ import { Observable, catchError, map, throwError } from 'rxjs';
 })
 export class RentalDetailsService {
 
-  _email? : string;
-  private isLoggedIn = false;
-
   constructor(private http : HttpClient) { }
 
   getRentalByCode(code : string){
@@ -29,7 +26,6 @@ export class RentalDetailsService {
           const responseBody = JSON.parse(response);
           console.log("Response:" , responseBody);
           if (responseBody.message === "Login successful") {
-            this.isLoggedIn = true;
             return response;
           } else {
             throw new Error("Invalid tracking code or email");
@@ -40,9 +36,5 @@ export class RentalDetailsService {
           return throwError(() => error);
         })
       );
-  }
-
-  isAuthenticated(){
-    return this.isLoggedIn;
   }
 }

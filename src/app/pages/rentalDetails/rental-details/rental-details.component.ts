@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 import { RentalDetailsService } from 'src/app/services/rental-details.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class RentalDetailsComponent {
   isModifyModalOpen : boolean = false;
   isCancelModalOpen : boolean = false;
 
-  constructor(private rs : RentalDetailsService){}
+  constructor(private rs : RentalDetailsService, private ls : LoginService){}
 
   openModifyModal(){
     this.isModifyModalOpen = true;
@@ -33,5 +34,9 @@ export class RentalDetailsComponent {
 
   cancelRental(code : string){
     this.rs.deleteRentalByCode(code);
+  }
+
+  logout(){
+    this.ls.logout();
   }
 }
