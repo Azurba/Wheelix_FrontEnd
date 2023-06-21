@@ -1,16 +1,22 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, throwError } from 'rxjs';
+import { RentalOrder } from '../Model/RentalOrder';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RentalDetailsService {
 
-  constructor(private http : HttpClient) { }
+  rentalCode : string;
 
-  getRentalByCode(code : string){
-    this.http.get(`https://localhost:7220/api/Rental/track/${code}`);
+  constructor(private http : HttpClient) {
+    this.rentalCode = '';
+  }
+
+  getRentalByCode(code: string): Observable<RentalOrder> {
+    console.log(`https://localhost:7220/api/Rental/track/${code}`);
+    return this.http.get<RentalOrder>(`https://localhost:7220/api/Rental/track/${code}`);
   }
 
   deleteRentalByCode(code : string){

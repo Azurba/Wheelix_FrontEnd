@@ -31,6 +31,7 @@ export class RentalLoginComponent {
         next: (response: string) => {
           // Handle the successful login case
           console.log("Login successful");
+          this.rd.rentalCode = rentalCode;
           this.guard.login();
         },
         error: (error: any) => {

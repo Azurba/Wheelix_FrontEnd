@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RentalOrder } from 'src/app/Model/RentalOrder';
 import { LoginService } from 'src/app/services/login.service';
 import { RentalDetailsService } from 'src/app/services/rental-details.service';
 
@@ -11,8 +12,26 @@ export class RentalDetailsComponent {
 
   isModifyModalOpen : boolean = false;
   isCancelModalOpen : boolean = false;
+  
 
-  constructor(private rs : RentalDetailsService, private ls : LoginService){}
+  rental? : RentalOrder;
+
+  constructor(private rs : RentalDetailsService, private ls : LoginService){
+  }
+
+  ngOnInit() {
+    console.log(this.rs.rentalCode);
+    this.rs.getRentalByCode(this.rs.rentalCode).subscribe({
+      next: (response: RentalOrder) => {
+        this.rental = response;
+        console.log(this.rental);
+      },
+      error: (error: any) => {
+        console.log("Error fetching rental details:", error);
+      }
+    });
+  }
+  
 
   openModifyModal(){
     this.isModifyModalOpen = true;
@@ -34,6 +53,10 @@ export class RentalDetailsComponent {
 
   cancelRental(code : string){
     this.rs.deleteRentalByCode(code);
+  }
+
+  printRental(){
+    window.print();
   }
 
   logout(){

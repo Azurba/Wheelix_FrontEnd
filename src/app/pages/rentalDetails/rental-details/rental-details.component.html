@@ -4,7 +4,7 @@
             <div class="card border-warning mb-3" style="width: 100%;">
                 <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
                 <div class="card-body">
-                    <h1 class="card-title">Rental AHDGR</h1>
+                    <h1 class="card-title">Rental Details ({{rental?.trackingCode}})</h1>
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -12,14 +12,14 @@
                             </svg>
                         </div>
                         <div class="col-11 align-items-center">
-                            <h3 style="font-size: 20px;">Joao Pimenta Giudice</h3>
+                            <h3 style="font-size: 20px;">{{rental?.driverName}}</h3>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center">
                         </div>
                         <div class="col-11 align-items-center">
-                            <h3 style="font-size: 20px;">joao@gmail.com</h3>
+                            <h3 style="font-size: 20px;">{{rental?.driverEmail}}</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -29,14 +29,14 @@
                             </svg>
                         </div>
                         <div class="col-11 align-items-center">
-                            <h3 style="font-size: 20px;">Ford Edge <span style="color: gray; font-size: 18px;">or similar</span></h3>
+                            <h3 style="font-size: 20px;">{{rental?.carName}} <span style="color: gray; font-size: 18px;">or similar</span></h3>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center">
                         </div>
                         <div class="col-11 align-items-center">
-                            <h3 style="font-size: 20px;"><span style="text-decoration: underline;">Additionals</span>: Wheelix Fuel, LDW</h3>
+                            <h3 style="font-size: 20px;"><span style="text-decoration: underline;">Additionals</span>: {{rental?.additionals}}</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -47,7 +47,7 @@
                             </svg>
                         </div>
                         <div class="col-11 align-items-center">
-                            <h3 style="font-size: 20px;">Date 1<span style="font-weight: bold;"> to </span> Date 2</h3>
+                            <h3 style="font-size: 20px;">{{rental?.startDate}}<span style="font-weight: bold;"> to </span> {{rental?.endDate}}</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -58,14 +58,14 @@
                             </svg>
                         </div>
                         <div class="col-11 align-items-center">
-                            <h3 style="font-size: 20px;">Wheelix Denver Airport</h3>
+                            <h3 style="font-size: 20px;">{{rental?.locationName}}</h3>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center">
                         </div>
                         <div class="col-11 align-items-center">
-                            <h3 style="font-size: 20px;">101 W Plum Street</h3>
+                            <h3 style="font-size: 20px;">{{rental?.locationAddress}}</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -78,11 +78,12 @@
                             </svg>
                         </div>
                         <div class="col-11 align-items-center">
-                            <h3 style="font-size: 20px;">625,00</h3>
+                            <h3 style="font-size: 20px;">{{rental?.totalCost | currency}}</h3>
                         </div>
                     </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-success" (click)="printRental()">Print Rental</button>
             <button type="button" class="btn btn-info" (click)="openModifyModal()">Modify Rental</button>
             <button type="button" class="btn btn-danger" (click)="openCancelModal()">Cancel Rental</button>
             <!-- Modal modify -->

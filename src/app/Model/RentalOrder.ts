@@ -11,6 +11,6 @@ export interface RentalOrder{
     additionals : string;
     startDate : Date;
     endDate : Date;
-    total : number;
+    totalCost : number;
     payment : string;
 }

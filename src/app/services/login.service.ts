@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  private isUserLoggedIn = true;
+  private isUserLoggedIn = false;
 
   constructor(private router : Router) { }
 
