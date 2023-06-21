@@ -30,6 +30,7 @@ import { AdditionalsSectionComponent } from './pages/orderBuilder/additionalsSec
 import { ConfirmSectionComponent } from './pages/orderBuilder/confirm-section/confirm-section.component';
 import { MapSectionComponent } from './pages/orderBuilder/map-section/map-section.component';
 import { RentalDetailsComponent } from './pages/rentalDetails/rental-details/rental-details.component';
+import { RentalLoginComponent } from './pages/rental-login/rental-login.component';
 
 
 
@@ -43,7 +44,8 @@ import { RentalDetailsComponent } from './pages/rentalDetails/rental-details/ren
     AdditionalsSectionComponent,
     ConfirmSectionComponent,
     MapSectionComponent,
-    RentalDetailsComponent
+    RentalDetailsComponent,
+    RentalLoginComponent
   ],
   imports: [
     BrowserModule,

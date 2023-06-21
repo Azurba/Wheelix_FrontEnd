@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class RentalDetailsService {
 
+  
+
   constructor(private http : HttpClient) { }
 
   getRentalByCode(code : string){
