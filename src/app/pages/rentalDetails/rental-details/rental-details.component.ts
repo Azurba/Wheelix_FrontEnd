@@ -7,4 +7,24 @@ import { Component } from '@angular/core';
 })
 export class RentalDetailsComponent {
 
+  isModifyModalOpen : boolean = false;
+  isCancelModalOpen : boolean = false;
+
+  openModifyModal(){
+    this.isModifyModalOpen = true;
+  }
+
+  closeModifyModal(){
+    this.isModifyModalOpen = false;
+  }
+
+  openCancelModal(){
+    console.log("clicked" + this.isCancelModalOpen)
+    this.isCancelModalOpen = true;
+    console.log(this.isCancelModalOpen);
+  }
+
+  closeCancelModal(){
+    this.isCancelModalOpen = false;
+  }
 }
