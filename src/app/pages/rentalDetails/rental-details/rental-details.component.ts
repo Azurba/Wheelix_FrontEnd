@@ -22,11 +22,9 @@ export class RentalDetailsComponent {
   }
 
   ngOnInit() {
-    console.log(this.rs.rentalCode);
     this.rs.getRentalByCode(this.rs.rentalCode).subscribe({
       next: (response: RentalOrder) => {
         this.rental = response;
-        console.log(this.rental);
         this.formattedStartDate = this.datePipe.transform(this.rental.startDate, 'EEEE, MMM d yyyy');
         this.formattedEndDate = this.datePipe.transform(this.rental.endDate, 'EEEE, MMM d yyyy');
       },
@@ -46,9 +44,7 @@ export class RentalDetailsComponent {
   }
 
   openCancelModal(){
-    console.log("clicked" + this.isCancelModalOpen)
     this.isCancelModalOpen = true;
-    console.log(this.isCancelModalOpen);
   }
 
   closeCancelModal(){

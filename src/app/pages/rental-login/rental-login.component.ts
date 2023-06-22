@@ -26,7 +26,6 @@ export class RentalLoginComponent {
     if (this.loginForm) {
       const rentalCode = this.loginForm.get('rentalCode')?.value;
       const email = this.loginForm.get('email')?.value;
-      console.log("component:", rentalCode, email);
       this.rd.login(rentalCode, email).subscribe({
         next: (response: string) => {
           // Handle the successful login case
