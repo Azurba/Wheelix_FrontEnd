@@ -25,12 +25,11 @@ export class RentalDetailsService {
 
   public login(trackingCode: string, email: string): Observable<string> {
     const request = { trackingCode, email };
-    console.log("Request: ", request)
+
     return this.http.post("https://localhost:7220/api/Rental/login", request, { responseType: 'text' })
       .pipe(
         map((response: string) => {
           const responseBody = JSON.parse(response);
-          console.log("Response:" , responseBody);
           if (responseBody.message === "Login successful") {
             return response;
           } else {

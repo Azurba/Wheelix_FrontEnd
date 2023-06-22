@@ -56,8 +56,7 @@ export class OrderBuilderService {
   setUpInitialData(start: Date, end: Date, location: string, age: string) {
     this.startDate = start;
     this.endDate = end;
-    console.log("order builder service: ", this.startDate);
-    console.log("order builder service: ", typeof this.startDate);
+
     // Format the dates as strings
     const formattedStart = this.datePipe.transform(start, 'EEEE, MMM d yyyy');
     const formattedEnd = this.datePipe.transform(end, 'EEEE, MMM d yyyy');
@@ -116,9 +115,6 @@ export class OrderBuilderService {
         totalCost: this.total,
         payment: this.payment
       }
-      console.log(rentalData);
-    console.log("order builder service submit rental order: ", this.startDate);
-    console.log("order builder service submit rental order: ", typeof this.startDate);
 
     this.http.post('https://localhost:7220/api/Rental', rentalData)
       .subscribe({
