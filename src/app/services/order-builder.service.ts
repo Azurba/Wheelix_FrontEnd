@@ -56,7 +56,7 @@ export class OrderBuilderService {
   setUpInitialData(start: Date, end: Date, location: string, age: string) {
     this.startDate = start;
     this.endDate = end;
-
+    this.generateTrackingCode();
     // Format the dates as strings
     const formattedStart = this.datePipe.transform(start, 'EEEE, MMM d yyyy');
     const formattedEnd = this.datePipe.transform(end, 'EEEE, MMM d yyyy');
@@ -97,7 +97,6 @@ export class OrderBuilderService {
   }
 
   public submitRentalOrder(){
-    this.generateTrackingCode();
     if(this.startDate != undefined && this.endDate != undefined){
       const rentalData = {
         id: 0,

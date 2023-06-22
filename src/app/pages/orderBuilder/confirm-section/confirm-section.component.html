@@ -8,6 +8,7 @@
               <img class="card-img-top" src="{{ob.carImg}}" alt="Card image cap">
              <div class="card-body">
                 <h1 class="card-title">{{ob.carName}} or similar</h1>
+                <h3>Rental Code: {{ob.trackingCode}}</h3>
                 <p class="card-text"><span style="font-weight: bolder;">Pick-up location: </span>{{ob.locationName}} - {{ob.locationAddress}}</p>
                 <mat-divider></mat-divider>
                 <p class="card-text"><span style="font-weight: bolder;">From: </span>{{ob.formattedStartDate}}</p>
@@ -73,6 +74,7 @@
             <div class="modal-body">
               <div class="text-center">
                 <h1 style="font-weight: bolder;">Rental Details</h1>
+                <h3>Rental Code: {{ob.trackingCode}}</h3>
                 <div class="card mx-auto" style="width: 18rem;">
                   <img class="card-img-top" src="{{ob.carImg}}" alt="Card image cap">
                  <div class="card-body">
