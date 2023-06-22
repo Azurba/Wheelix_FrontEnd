@@ -71,6 +71,8 @@ export class HomeComponent {
         this._snackBar.open('Drivers under 20 years old are not allowed to rent cars.', 'Close', { duration: 30000, horizontalPosition: 'center', verticalPosition: 'bottom' });
       }else{
         this.ob.allow();
+        console.log("home component: ", this.range.value.start);
+        console.log("home component: ", typeof this.range.value.start);
         this.ob.setUpInitialData(this.range.value.start, this.range.value.end, this.driverForm.value.location, this.driverForm.value.age);
       }
       //console.log(this.range.value);

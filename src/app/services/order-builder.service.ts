@@ -31,7 +31,7 @@ export class OrderBuilderService {
   driverName? : string;
   driverPhone? : string;
   driverEmail? : string;
-  additionals? : string;
+  additionals : string = '';
   startDate? : Date;
   endDate? : Date;
   total? : number;
@@ -56,6 +56,8 @@ export class OrderBuilderService {
   setUpInitialData(start: Date, end: Date, location: string, age: string) {
     this.startDate = start;
     this.endDate = end;
+    console.log("order builder service: ", this.startDate);
+    console.log("order builder service: ", typeof this.startDate);
     // Format the dates as strings
     const formattedStart = this.datePipe.transform(start, 'EEEE, MMM d yyyy');
     const formattedEnd = this.datePipe.transform(end, 'EEEE, MMM d yyyy');
@@ -97,22 +99,26 @@ export class OrderBuilderService {
 
   public submitRentalOrder(){
     this.generateTrackingCode();
-    const rentalData = {
-      id: 0,
-      trackingCode: this.trackingCode,
-      locationName: this.locationName,
-      locationAddress: this.locationAddress,
-      carName: this.carName,
-      carType: this.carType,
-      driverName: this.driverName,
-      driverPhone: this.driverPhone,
-      driverEmail: this.driverEmail,
-      additionals: this.additionals,
-      startDate: this.startDate,
-      endDate: this.endDate,
-      totalCost: this.total,
-      payment: this.payment
-    }
+    if(this.startDate != undefined && this.endDate != undefined){
+      const rentalData = {
+        id: 0,
+        trackingCode: this.trackingCode,
+        locationName: this.locationName,
+        locationAddress: this.locationAddress,
+        carName: this.carName,
+        carType: this.carType,
+        driverName: this.driverName,
+        driverPhone: this.driverPhone,
+        driverEmail: this.driverEmail,
+        additionals: this.additionals,
+        startDate: this.startDate.toISOString(), // Convert to ISO 8601 string
+        endDate: this.endDate.toISOString(),
+        totalCost: this.total,
+        payment: this.payment
+      }
+      console.log(rentalData);
+    console.log("order builder service submit rental order: ", this.startDate);
+    console.log("order builder service submit rental order: ", typeof this.startDate);
 
     this.http.post('https://localhost:7220/api/Rental', rentalData)
       .subscribe({
@@ -125,6 +131,7 @@ export class OrderBuilderService {
           console.error('Failed to submit rental order:', error);
         }
       });
+    }
   }
   
 }
