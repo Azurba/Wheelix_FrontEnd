@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, throwError } from 'rxjs';
 import { RentalOrder } from '../Model/RentalOrder';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,11 @@ export class RentalDetailsService {
 
   rentalCode : string;
 
-  constructor(private http : HttpClient) {
+  constructor(private http : HttpClient, private _snackBar: MatSnackBar) {
     this.rentalCode = '';
   }
 
   getRentalByCode(code: string): Observable<RentalOrder> {
-    console.log(`https://localhost:7220/api/Rental/track/${code}`);
     return this.http.get<RentalOrder>(`https://localhost:7220/api/Rental/track/${code}`);
   }
 
@@ -38,7 +38,7 @@ export class RentalDetailsService {
           }
         }),
         catchError((error: HttpErrorResponse) => {
-          console.log("HTTP Error:", error);
+          this._snackBar.open('Invalid tracking code or email.', 'Close', { duration: 30000, horizontalPosition: 'center', verticalPosition: 'bottom' });
           return throwError(() => error);
         })
       );
