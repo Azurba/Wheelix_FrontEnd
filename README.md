@@ -16,18 +16,19 @@ A simple confirmation process triggers another API call, storing all the necessa
 
 To facilitate easy management of the rental, the website provides the user with a unique Rental Number, which can be used with the registered email to effortlessly retrieve all the relevant details of the rental. Whether you want to modify your booking, cancel it, or simply print your rental order, the system is designed to cater to the user's needs efficiently.
 
-
 ## Videos
 
 ### Home Page
 
-### Location Selection
+https://youtu.be/HhDUqtH977E
 
-### Vehicle Selection
+### Building an Order
 
-### Rental Confirmation
+https://youtu.be/lY3rVI8Ztz4
 
 ### Rental Details
+
+https://youtu.be/f5mJElKBSaY
 
 ## Pictures
 
