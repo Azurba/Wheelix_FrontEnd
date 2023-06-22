@@ -19,9 +19,17 @@
                         <div class="col-1 d-flex justify-content-center">
                         </div>
                         <div class="col-11 align-items-center">
+                            <h3 style="font-size: 20px;">{{rental?.driverPhone}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 d-flex justify-content-center">
+                        </div>
+                        <div class="col-11 align-items-center">
                             <h3 style="font-size: 20px;">{{rental?.driverEmail}}</h3>
                         </div>
                     </div>
+                    <mat-divider style="margin-bottom: 15px;"></mat-divider>
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
@@ -39,6 +47,7 @@
                             <h3 style="font-size: 20px;"><span style="text-decoration: underline;">Additionals</span>: {{rental?.additionals}}</h3>
                         </div>
                     </div>
+                    <mat-divider style="margin-bottom: 15px;"></mat-divider>
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-calendar-range" viewBox="0 0 16 16">
@@ -47,9 +56,17 @@
                             </svg>
                         </div>
                         <div class="col-11 align-items-center">
-                            <h3 style="font-size: 20px;">{{rental?.startDate}}<span style="font-weight: bold;"> to </span> {{rental?.endDate}}</h3>
+                            <h3 style="font-size: 20px;"><span style="font-weight: bold;">Pick-up: </span>{{formattedStartDate}}</h3>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-1 d-flex justify-content-center">
+                        </div>
+                        <div class="col-11 align-items-center">
+                            <h3 style="font-size: 20px;"><span style="font-weight: bold;">Return: </span>{{formattedEndDate}}</h3>
+                        </div>
+                    </div>
+                    <mat-divider style="margin-bottom: 15px;"></mat-divider>
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
@@ -68,6 +85,7 @@
                             <h3 style="font-size: 20px;">{{rental?.locationAddress}}</h3>
                         </div>
                     </div>
+                    <mat-divider style="margin-bottom: 15px;"></mat-divider>
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">

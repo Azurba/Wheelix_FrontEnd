@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RentalOrder } from 'src/app/Model/RentalOrder';
 import { LoginService } from 'src/app/services/login.service';
@@ -12,11 +13,12 @@ export class RentalDetailsComponent {
 
   isModifyModalOpen : boolean = false;
   isCancelModalOpen : boolean = false;
-  
+  formattedStartDate: string | null = null;
+  formattedEndDate: string | null = null;
 
   rental? : RentalOrder;
 
-  constructor(private rs : RentalDetailsService, private ls : LoginService){
+  constructor(private rs : RentalDetailsService, private ls : LoginService, private datePipe : DatePipe){
   }
 
   ngOnInit() {
@@ -25,6 +27,8 @@ export class RentalDetailsComponent {
       next: (response: RentalOrder) => {
         this.rental = response;
         console.log(this.rental);
+        this.formattedStartDate = this.datePipe.transform(this.rental.startDate, 'EEEE, MMM d yyyy');
+        this.formattedEndDate = this.datePipe.transform(this.rental.endDate, 'EEEE, MMM d yyyy');
       },
       error: (error: any) => {
         console.log("Error fetching rental details:", error);
