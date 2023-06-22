@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AdditionalsModel } from 'src/app/Model/additionalsModel';
 import { OrderBuilderService } from 'src/app/services/order-builder.service';
 
@@ -20,7 +21,7 @@ export class ConfirmSectionComponent {
   licenseAcknowledged : boolean = false;
 
 
-  constructor(private _formBuilder: FormBuilder, private ob_ : OrderBuilderService) {
+  constructor(private _formBuilder: FormBuilder, private ob_ : OrderBuilderService, private router : Router) {
     this.ob = ob_;
   }
 
@@ -58,5 +59,6 @@ export class ConfirmSectionComponent {
 
   closeModal() {
     this.isModalOpen = false;
+    this.router.navigateByUrl('/home');
   }
 }
