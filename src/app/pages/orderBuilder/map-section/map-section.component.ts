@@ -92,10 +92,10 @@ export class MapSectionComponent {
     }
   }
 
-  selectLocation(selectedCoordinates : L.LatLngExpression, selectedName : string, selectedAddress : string, stepper : MatStepper): void {
+  selectLocation(selectedCoordinates : L.LatLngExpression, selectedName : string, selectedAddress : string): void {
     this.ob.locationName = selectedName;
     this.ob.locationAddress = selectedAddress;
-    stepper.next();
+    //stepper.next();
     // console.log(selectedCoordinates)
     // console.log(selectedName)
     // console.log(selectedAddress)

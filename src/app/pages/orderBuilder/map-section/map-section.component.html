@@ -12,7 +12,7 @@
                     <h2 class="card-title">{{card.name}}</h2>
                     <p class="card-text">{{card.address}}</p>
                     <button type="button" class="btn btn-primary" style="margin-right: 20px;" (click)="viewOnMap(card.coordinates)">View on Map</button>
-                    <button type="button" class="btn btn-success" (click)="selectLocation(card.coordinates, card.name, card.address, stepper)">Select This Location</button>
+                    <button type="button" class="btn btn-success" (click)="selectLocation(card.coordinates, card.name, card.address)">Select This Location</button>
                   </div>
                 </div>
               </div>
@@ -23,7 +23,7 @@
                   <h2 class="card-title">{{card.name}}</h2>
                   <p class="card-text">{{card.address}}</p>
                   <button type="button" class="btn btn-primary" style="margin-right: 20px;" (click)="viewOnMap(card.coordinates)">View on Map</button>
-                  <button type="button" matStepperNext class="btn btn-success" (click)="selectLocation(card.coordinates, card.name, card.address, stepper)">Select This Location</button>
+                  <button type="button" matStepperNext class="btn btn-success" (click)="selectLocation(card.coordinates, card.name, card.address)">Select This Location</button>
                 </div>
               </div>
             </div>
