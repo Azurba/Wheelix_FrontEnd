@@ -1,37 +1,13 @@
-{
+[
+  {
     "id": 0,
     "model": "Edge",
     "manufacturer": "Ford",
     "type": "SUV",
     "color": "Red",
-    "bagSupport": 5,
+    "bagSupport": 3,
     "peopleSupport": 4,
     "licencePlate": "ABC-123",
-    "price": 85,
-    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/SUVS/SFAR.doi.352.high.imageSmallThreeQuarterNodePath.png/1551905658879.png"
-},
-{
-    "id": 0,
-    "model": "Edge",
-    "manufacturer": "Ford",
-    "type": "SUV",
-    "color": "White",
-    "bagSupport": 5,
-    "peopleSupport": 4,
-    "licencePlate": "ABC-124",
-    "price": 85,
-    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/SUVS/SFAR.doi.352.high.imageSmallThreeQuarterNodePath.png/1551905658879.png"
-},
-
-{
-    "id": 0,
-    "model": "Edge",
-    "manufacturer": "Ford",
-    "type": "SUV",
-    "color": "Black",
-    "bagSupport": 5,
-    "peopleSupport": 4,
-    "licencePlate": "ABC-125",
     "price": 85,
     "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/SUVS/SFAR.doi.352.high.imageSmallThreeQuarterNodePath.png/1551905658879.png"
 },
@@ -48,50 +24,26 @@
     "price": 75,
     "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/CARS/CCAR.doi.768.high.imageSmallThreeQuarterNodePath.png/1611777286679.png"
 },
-{
-    "id": 0,
-    "model": "Versa",
-    "manufacturer": "Nissan",
-    "type": "Compact",
-    "color": "Red",
-    "bagSupport": 2,
-    "peopleSupport": 5,
-    "licencePlate": "ABD-124",
-    "price": 75,
-    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/CARS/CCAR.doi.768.high.imageSmallThreeQuarterNodePath.png/1611777286679.png"
-},
-{
-    "id": 0,
-    "model": "Versa",
-    "manufacturer": "Nissan",
-    "type": "Compact",
-    "color": "White",
-    "bagSupport": 2,
-    "peopleSupport": 5,
-    "licencePlate": "ABD-125",
-    "price": 75,
-    "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/CARS/CCAR.doi.768.high.imageSmallThreeQuarterNodePath.png/1611777286679.png"
-},
 
 {
     "id": 0,
     "model": "Pacifica",
     "manufacturer": "Chrysler",
-    "type": "Compact",
+    "type": "Family Van",
     "color": "White",
     "bagSupport": 7,
     "peopleSupport": 7,
     "licencePlate": "ABE-123",
-    "price": 75,
+    "price": 95,
     "image": "https://assets.gcs.ehi.com/content/enterprise_cros/data/vehicle/bookingCountries/US/VANS/MVAR.doi.768.high.imageSmallThreeQuarterNodePath.png/1618263096675.png"
 },
 {
     "id": 0,
     "model": "F150",
     "manufacturer": "Ford",
-    "type": "Compact",
+    "type": "Truck",
     "color": "White",
-    "bagSupport": 4,
+    "bagSupport": 10,
     "peopleSupport": 4,
     "licencePlate": "ABF-123",
     "price": 115,
@@ -102,12 +54,12 @@
     "id": 0,
     "model": "F750",
     "manufacturer": "Ford",
-    "type": "Compact",
+    "type": "Moving Truck",
     "color": "White",
-    "bagSupport": 0,
+    "bagSupport": 10,
     "peopleSupport": 2,
     "licencePlate": "ABG-123",
-    "price": 115,
+    "price": 125,
     "image": "https://t3.ftcdn.net/jpg/01/62/45/82/360_F_162458270_D7v0YbzB2vRDYzyqkEx0OzrNfjv9DHCH.jpg"
 },
 
@@ -115,7 +67,7 @@
     "id": 0,
     "model": "Corvette",
     "manufacturer": "Chevrolet",
-    "type": "Compact",
+    "type": "Premium",
     "color": "White",
     "bagSupport": 0,
     "peopleSupport": 2,
@@ -127,7 +79,7 @@
     "id": 0,
     "model": "S",
     "manufacturer": "Tesla",
-    "type": "Compact",
+    "type": "Electric",
     "color": "White",
     "bagSupport": 3,
     "peopleSupport": 5,
@@ -140,12 +92,14 @@
     "id": 0,
     "model": "Wrangler",
     "manufacturer": "Jeep",
-    "type": "Compact",
+    "type": "Jeep",
     "color": "White",
-    "bagSupport": 3,
+    "bagSupport": 1,
     "peopleSupport": 5,
     "licencePlate": "ABI-123",
     "price": 130,
     "image": "https://rare-gallery.com/uploads/posts/865665-2019-Wrangler-Unlimited-Overland-Latam-Jeep-White-background.jpg"
 }
 
+
+]

@@ -15,7 +15,7 @@
         <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
         <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
     </mat-form-field>
-    <p style="color: white;">Selected range: {{range.value | json}}</p>
+    <!-- <p style="color: white;">Selected range: {{range.value | json}}</p> -->
     <div class="input-container" [formGroup]="driverForm">
         <div class="side-by-side">
             <div class="input-wrapper" style="margin-right: 20px;">

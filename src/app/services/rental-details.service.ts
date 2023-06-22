@@ -19,8 +19,8 @@ export class RentalDetailsService {
     return this.http.get<RentalOrder>(`https://localhost:7220/api/Rental/track/${code}`);
   }
 
-  deleteRentalByCode(code : string){
-    this.http.delete(`https://localhost:7220/api/Rental/${code}`);
+  deleteRentalByCode(code : string) : Observable<any>{
+    return this.http.delete(`https://localhost:7220/api/Rental/${code}`);
   }
 
   public login(trackingCode: string, email: string): Observable<string> {

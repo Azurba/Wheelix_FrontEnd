@@ -142,7 +142,21 @@
                 <div class="text-center">
                     <h1 style="font-weight: bolder;">Are you sure you want to cancel this rental?</h1>
                     <button type="button" class="btn btn-success" (click)="closeCancelModal()">No</button>
-                    <button type="button" class="btn btn-danger" (click)="closeCancelModal()">Yes</button>
+                    <button type="button" class="btn btn-danger" (click)="cancelRental()">Yes</button>
+                </div>
+                <div *ngIf="isLoaderOpen" class="d-flex justify-content-center" style="margin-top: 50px;">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 style="padding-left: 100px;">Processing your cancelation...</h1>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="loader">
+                                <span class="hour"></span>
+                                <span class="min"></span>
+                                <span class="circel"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
