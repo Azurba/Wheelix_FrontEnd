@@ -32,6 +32,8 @@ export class HomeComponent {
   apiKey = '';
   city = '';
 
+  isLoaderOpen : boolean = false;
+
   constructor(private _faq : FaqData, private homeService : HomeService, private _fleet : FleetData, private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private ob : OrderBuilderService) {
     this.faqArray = _faq.faqArray;
     this.fleetArray = _fleet.fleetArray;
@@ -66,12 +68,18 @@ export class HomeComponent {
   }
 
   browseVehicles(){
+    this.openModal();
     if(this.driverForm.value.location != null && this.driverForm.value.age != null && this.range.value.start != null && this.range.value.end != null){
       if(this.driverForm.value.age < 20){
         this._snackBar.open('Drivers under 20 years old are not allowed to rent cars.', 'Close', { duration: 30000, horizontalPosition: 'center', verticalPosition: 'bottom' });
       }else{
-        this.ob.allow();
-        this.ob.setUpInitialData(this.range.value.start, this.range.value.end, this.driverForm.value.location, this.driverForm.value.age);
+        setTimeout(() => {
+          if( this.range.value.start != null && this.range.value.end != null){
+            this.closeModal();
+            this.ob.allow();
+            this.ob.setUpInitialData(this.range.value.start, this.range.value.end, this.driverForm.value.location, this.driverForm.value.age);
+          }
+        }, 3000);
       }
       //console.log(this.range.value);
       //console.log('Location:', this.driverForm.value.location);
@@ -84,5 +92,13 @@ export class HomeComponent {
         this._snackBar.open('Missing Information: Location and/or Driver\'s age', 'Close', { duration: 30000, horizontalPosition: 'center', verticalPosition: 'bottom' });
       }
     }
+  }
+
+  openModal(){
+    this.isLoaderOpen = true;
+  }
+
+  closeModal(){
+    this.isLoaderOpen = false;
   }
 }
